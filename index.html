@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#252a25">
+  <meta name="description" content="부산의 공간을 새롭게. 올 인테리어 디자인 — 주거·상업공간 인테리어, 전체 리모델링부터 부분 집수리까지. 무료 방문 실측 및 견적 상담.">
+  <title>올 인테리어 디자인 | 공간의 변화, 일상의 새로운 장면</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/living-room.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/entrance.webp" fetchpriority="high">
+  <style>
+    :root{--paper:#f4f3ee;--white:#fff;--ink:#252a25;--muted:#787b72;--line:#d6d7ce;--orange:#cf5835;--orange-dark:#ad4123;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans','Noto Sans KR',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}body.modal-open{overflow:hidden}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}button:disabled{cursor:default;opacity:.45}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:5px}img{display:block;width:100%;height:100%;object-fit:cover}button{color:inherit}::selection{background:var(--orange);color:white}h1,h2,h3,p{margin:0}h1,h2,h3{word-break:keep-all}svg.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;flex:none}button.clean{background:none;border:0;padding:0}.container{width:min(1320px,calc(100% - 112px));margin-inline:auto}.eyebrow{font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;display:flex;align-items:center;gap:12px}.eyebrow::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%}.section-heading{font-size:clamp(32px,3.4vw,50px);line-height:1.45;letter-spacing:-2px;font-weight:500}.italic{font-family:var(--serif);font-weight:400;font-style:italic}.arrow-link{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;font-size:14px;font-weight:500;padding-block:13px;border-bottom:1px solid currentColor}.arrow-link:hover .icon{transform:translate(3px,-3px)}.arrow-link .icon{transition:transform .2s}.skip-link{position:fixed;top:8px;left:8px;transform:translateY(-150%);background:var(--paper);z-index:100;padding:10px 20px}.skip-link:focus{transform:none}
+    .site-header{height:94px;position:absolute;top:0;left:0;width:100%;z-index:20;color:white;border-bottom:1px solid #ffffff30;transition:background .3s,height .3s}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:30px}.brand{display:flex;align-items:center;gap:17px;flex:none}.wordmark{font-size:51px;line-height:1;letter-spacing:-5px;font-weight:500}.brand-description{font-size:11px;line-height:1.6;letter-spacing:1.4px;border-left:1px solid #ffffff50;padding-left:18px}.nav{display:flex;align-items:center;gap:35px;font-size:14px}.nav>a{position:relative;padding-block:10px}.nav>a::after{position:absolute;content:'';height:1px;background:white;bottom:3px;left:0;width:0;transition:width .25s}.nav>a:hover::after{width:100%}.header-cta{border:1px solid #ffffff75;padding:10px 18px;display:flex;align-items:center;gap:22px;font-size:13px;background:#ffffff08;transition:background .2s}.header-cta:hover{background:#ffffff25}.menu-toggle{display:none;color:white;width:44px;height:44px;background:none;border:0}.menu-toggle span{display:block;height:1px;background:currentColor;width:24px;margin:6px auto}.site-header.is-fixed{position:fixed;background:#252a25f5;backdrop-filter:blur(14px);height:76px;box-shadow:0 2px 20px #00000012}
+    .hero{height:min(890px,100svh);min-height:720px;position:relative;background:#5d594a;color:white;isolation:isolate;overflow:hidden}.hero-photo{position:absolute;inset:0;z-index:-3;transform:scale(1.04);object-position:center 56%;animation:hero-arrive 1.8s ease-out both}.hero::before{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#111c16b8 0%,#15201860 47%,#171d1510 77%),linear-gradient(0deg,#171e1ba6 0%,transparent 28%,#1b211c25 65%,#17201a5c 100%)}.hero-grid{position:absolute;inset:94px 56px 0;border-inline:1px solid #ffffff12;z-index:-1;pointer-events:none}.hero-grid::before{content:'';height:100%;position:absolute;left:61.8%;border-left:1px solid #ffffff12}.hero-content{position:relative;padding-top:clamp(177px,21vh,230px)}.hero-kicker{font-size:12px;letter-spacing:3px;display:flex;align-items:center;gap:15px;animation:rise-in .8s .1s both}.hero-kicker .line{width:38px;height:1px;background:#ffffff90}.hero h1{font-size:clamp(48px,5.05vw,78px);font-weight:400;line-height:1.3;letter-spacing:-3.5px;margin:28px 0 22px;animation:rise-in .85s .2s both}.hero h1 em{font-family:'Noto Sans KR',sans-serif;font-style:normal;font-weight:300}.hero-sub{font-size:16px;font-weight:300;line-height:1.9;color:#ffffffd4;animation:rise-in .85s .3s both}.hero-action{display:inline-flex;gap:40px;align-items:center;border-bottom:1px solid #ffffff85;padding:15px 0 12px;margin-top:28px;background:none;color:white;font-size:14px;animation:rise-in .85s .4s both}.hero-action:hover svg{transform:translate(4px,-4px)}.hero-action svg{transition:transform .2s}.hero-index{position:absolute;right:56px;top:135px;display:flex;align-items:center;gap:15px;font-size:12px;letter-spacing:2px}.hero-index span{width:72px;height:1px;background:#ffffff40;position:relative}.hero-index span::before{content:'';position:absolute;width:33%;height:1px;background:white}.hero-note{position:absolute;right:170px;top:56%;display:flex;align-items:center;gap:15px;font-size:12px;letter-spacing:1px}.hero-note .point{height:14px;width:14px;border:1px solid white;border-radius:50%;box-shadow:0 0 0 7px #ffffff18}.hero-note .point::after{content:'';display:block;background:white;width:4px;height:4px;border-radius:50%;margin:4px}.hero-note .note-line{width:50px;height:1px;background:#ffffff80}.hero-note-text{border:1px solid #ffffff4d;background:#25332826;backdrop-filter:blur(15px);padding:10px 17px;line-height:1.65}.hero-note-text small{display:block;font-size:10px;letter-spacing:2px;color:#ffffffab}.hero-bottom{position:absolute;bottom:101px;left:56px;right:56px;display:flex;align-items:flex-end;justify-content:space-between}.scroll-hint{display:flex;align-items:center;gap:15px;font-size:11px;letter-spacing:2px}.scroll-hint::before{content:'';height:48px;width:1px;background:linear-gradient(transparent,#fff);animation:scroll-line 2s ease-in-out infinite}.hero-caption{text-align:right;font-size:12px;line-height:1.8;letter-spacing:.6px;color:#ffffffa8}.hero-caption strong{font-size:14px;color:white;font-weight:400}.round-cta{position:absolute;right:57px;top:72%;border:1px solid #ffffff5c;border-radius:50%;width:112px;height:112px;color:white;background:#cf5835e8;display:grid;place-content:center;text-align:center;font-size:13px;line-height:1.6;transition:transform .3s,background .3s;box-shadow:0 10px 40px #00000010}.round-cta .icon{margin:7px auto 0}.round-cta:hover{transform:rotate(-8deg);background:var(--orange-dark)}
+    .quick-inquiry{position:relative;z-index:3;margin-top:-57px;display:grid;grid-template-columns:1.18fr 1fr 1fr .8fr 1.1fr;align-items:center;background:var(--paper);padding:27px 30px;box-shadow:0 15px 40px #1e281813;min-height:115px;gap:0}.quick-intro{font-size:18px;font-weight:500;letter-spacing:-.7px;line-height:1.55;padding-left:7px}.quick-field{padding-inline:25px;border-left:1px solid var(--line);min-width:0}.quick-field label{display:block;font-size:11px;letter-spacing:.9px;color:#777b71;margin-bottom:6px}.quick-field select{border:0;border-radius:0;background:transparent;width:100%;font-size:14px;color:var(--ink);padding:3px 12px 3px 0;cursor:pointer}.quick-submit{border:0;background:var(--orange);color:white;padding:19px 21px;font-size:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s}.quick-submit:hover,.primary-btn:hover{background:var(--orange-dark)}
+    .intro{padding:117px 0 82px}.intro-layout{display:grid;grid-template-columns:1fr 1fr;gap:90px;margin-top:30px}.intro-heading{font-size:clamp(33px,3.1vw,47px);font-weight:400;letter-spacing:-2px;line-height:1.5}.intro-heading .italic{color:#909785;font-size:1.13em}.intro-copy{padding-top:12px;font-size:15px;font-weight:400;color:#777a71;line-height:2}.intro-copy strong{color:var(--ink);font-weight:500}.intro-meta{display:flex;align-items:center;justify-content:space-between;margin-top:27px;gap:15px;font-size:12px;letter-spacing:1px}.busan-tag{display:flex;align-items:center;gap:8px;color:var(--ink);font-size:13px;letter-spacing:0}.busan-tag svg{color:var(--orange);width:16px}.divider{border:0;border-top:1px solid var(--line);margin:0}.trust-row{display:grid;grid-template-columns:repeat(3,1fr);margin-top:66px;border-block:1px solid var(--line);padding:25px 0}.trust-item{display:flex;gap:18px;align-items:center;justify-content:center;border-left:1px solid var(--line)}.trust-item:first-child{border-left:0}.trust-item .trust-icon{width:34px;height:34px;stroke:#7a826f;fill:none;stroke-width:1.1}.trust-item strong{display:block;font-size:15px;font-weight:500}.trust-item span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+    .spaces{padding:28px 0 112px}.section-top{display:flex;justify-content:space-between;align-items:flex-end;gap:25px;margin-bottom:38px}.section-top h2{margin-top:19px}.section-aside{font-size:13px;color:var(--muted);text-align:right;line-height:1.8;padding-bottom:7px}.space-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:49px}.space-card:nth-child(2){padding-top:109px}.image-wrap{position:relative;overflow:hidden;background:#d5d2c8;height:460px}.space-card:nth-child(2) .image-wrap{height:410px}.space-card img{transition:transform .8s cubic-bezier(.2,.7,.2,1);object-position:center}.space-card:hover img{transform:scale(1.045)}.image-label{position:absolute;top:21px;left:21px;border:1px solid #ffffff85;color:white;background:#19251e30;backdrop-filter:blur(8px);font-size:11px;letter-spacing:1.5px;padding:5px 11px}.image-concept{position:absolute;right:16px;bottom:13px;color:#fff;font-size:11px;letter-spacing:.2px;text-shadow:0 1px 6px #0009}.image-open{position:absolute;bottom:21px;left:21px;border:1px solid #ffffff88;background:#ffffff10;backdrop-filter:blur(10px);border-radius:50%;color:white;display:grid;place-items:center;width:47px;height:47px;transition:background .2s}.image-open:hover{background:var(--orange)}.space-details{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-top:22px}.space-details h3{font-size:24px;font-weight:400;letter-spacing:-1px}.space-details p{font-size:13px;color:var(--muted);margin-top:7px}.space-number{font-size:12px;color:#8a8e83;letter-spacing:1px;padding-top:9px}.space-footnote{margin-top:35px;font-size:11px;color:#8b8e85;display:flex;gap:10px;align-items:center}.space-footnote::before{content:'';display:inline-block;width:25px;height:1px;background:#a1a598}
+    .services{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;padding:95px 0 105px}.services::after{content:'all.';position:absolute;left:-12px;bottom:-155px;font-size:460px;letter-spacing:-40px;line-height:1;color:#ffffff03;pointer-events:none}.services .eyebrow{color:#b8beb0}.services-layout{display:grid;grid-template-columns:1fr 1.17fr;gap:110px}.services h2{margin-top:30px;font-size:40px;line-height:1.5;font-weight:400;letter-spacing:-2px}.services .italic{font-size:65px;color:#b5bfaa;letter-spacing:-1px;line-height:1.6;display:block;margin-top:10px}.services-intro>p{font-size:14px;color:#afb5a8;line-height:1.9;margin-top:24px}.service-list{border-top:1px solid #ffffff28}.service-row{border-bottom:1px solid #ffffff28;position:relative}.service-row summary{cursor:pointer;display:flex;align-items:center;gap:25px;list-style:none;padding:22px 0}.service-row summary::-webkit-details-marker{display:none}.service-n{font-size:12px;color:#919b86;letter-spacing:1px}.service-row h3{font-size:22px;font-weight:400;letter-spacing:-.8px;flex:1}.service-row .plus{height:17px;width:17px;position:relative;color:#a6b19b}.plus::before,.plus::after{content:'';position:absolute;background:currentColor}.plus::before{width:15px;height:1px;top:7px;left:0}.plus::after{width:1px;height:15px;left:7px;top:0;transition:transform .2s}.service-row[open] .plus::after{transform:rotate(90deg)}.service-row[open] h3{color:#d6e0cb}.service-row p{padding:0 30px 22px 43px;font-size:13px;color:#aeb8a4;line-height:1.9}.services-link{color:#e5e9dd;margin-top:29px;display:flex;align-items:center;justify-content:space-between;font-size:13px}.services-link button{display:flex;align-items:center;gap:12px;color:#e5e9dd;background:none;border:0;font-size:13px}
+    .process{padding:99px 0 110px}.process .section-top{margin-bottom:53px}.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:45px}.process-card{border-top:1px solid #bfc3b6;padding-top:26px;position:relative}.process-card:not(:last-child)::after{content:'↗';position:absolute;right:0;top:27px;font-size:23px;font-weight:300;color:#8b9481}.process-number{font-size:13px;font-weight:500;color:var(--orange);letter-spacing:2px}.process-card h3{font-size:22px;letter-spacing:-1px;font-weight:500;margin-top:29px}.process-card p{margin-top:13px;font-size:14px;color:var(--muted);line-height:1.9}.process-card small{display:block;font-size:11px;color:#8e9485;letter-spacing:1px;margin-top:20px}
+    .contact{position:relative;background:#e2e5d9;padding:75px 0 79px;overflow:hidden}.contact-inner{display:flex;justify-content:space-between;align-items:center;gap:35px;position:relative}.contact h2{font-size:clamp(32px,3.6vw,52px);font-weight:400;line-height:1.5;letter-spacing:-2.4px}.contact p{font-size:14px;color:#6f7865;margin-top:18px}.contact-actions{padding-right:35px;flex-shrink:0}.contact-button{width:145px;height:145px;border:1px solid #848e77;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:none;font-size:15px;transition:background .25s,color .25s,border-color .25s}.contact-button svg{width:26px;height:26px}.contact-button:hover{background:var(--ink);color:white;border-color:var(--ink)}.contact .eyebrow{margin-bottom:20px}.contact-watermark{position:absolute;right:180px;top:25px;font-size:260px;line-height:1;font-family:var(--serif);font-style:italic;letter-spacing:-12px;color:#a1ad8f18;pointer-events:none}
+    .footer{padding:46px 0 25px;background:var(--paper)}.footer-top{display:flex;align-items:center;justify-content:space-between;gap:25px;padding-bottom:33px;border-bottom:1px solid var(--line)}.footer .brand-description{border-color:#bcc1b1;font-size:10px}.footer .wordmark{font-size:49px}.footer-middle{display:flex;align-items:center;gap:20px;color:var(--muted);font-size:12px}.footer-channels{display:flex;gap:18px;font-size:13px;align-items:center}.footer-channels span{display:flex;align-items:center;gap:5px}.footer-channels svg{width:12px;height:12px;color:#939987}.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;color:#8b9083;margin-top:21px}.back-top{border:0;background:none;display:flex;align-items:center;gap:12px;font-size:11px;color:#646d59;letter-spacing:1px}.back-top .icon{width:15px;height:15px}.mobile-bottom{display:none}
+    dialog{border:0;padding:0;color:var(--ink);background:var(--paper);width:min(700px,calc(100% - 32px));max-height:calc(100svh - 40px);box-shadow:0 30px 100px #0005;overscroll-behavior:contain}dialog::backdrop{background:#111b15b8;backdrop-filter:blur(7px)}.dialog-content{padding:35px 39px}.dialog-top{display:flex;justify-content:space-between;align-items:center;gap:15px}.dialog-close{width:38px;height:38px;background:none;border:1px solid var(--line);display:grid;place-items:center;flex:none}.dialog-title{font-weight:500;font-size:30px;letter-spacing:-1.4px;margin-top:24px}.dialog-intro{font-size:13px;color:var(--muted);margin-top:8px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;margin-top:25px}.form-field{display:flex;flex-direction:column;gap:7px;min-width:0}.form-field.wide{grid-column:1/-1}.form-field>label{font-size:13px;font-weight:500}.form-field label span{font-size:11px;font-weight:400;color:var(--muted);margin-left:5px}.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid #c9cec1;background:#fff8;border-radius:0;padding:11px 12px;font-size:14px;min-height:46px;color:var(--ink)}.form-field textarea{resize:vertical;min-height:83px}.form-field input[type=file]{font-size:12px;padding:10px}.form-field input[type=file]::file-selector-button{background:#e5e8dc;border:0;padding:5px 9px;color:var(--ink);margin-right:9px;cursor:pointer}.form-help{font-size:11px;color:var(--muted);line-height:1.7}.file-previews{display:flex;gap:9px;flex-wrap:wrap}.file-preview{width:64px;height:64px;position:relative}.file-preview img{border-radius:2px}.file-preview button{position:absolute;top:-5px;right:-5px;border:0;background:var(--ink);color:white;border-radius:50%;width:21px;height:21px;font-size:14px;line-height:1}.primary-btn{border:0;background:var(--orange);color:white;padding:14px 21px;display:flex;align-items:center;justify-content:center;gap:20px;font-size:14px;transition:background .2s;min-height:50px}.form-actions{margin-top:24px;display:flex;gap:12px}.form-actions>*{flex:1}.secondary-btn{border:1px solid #abb3a0;background:transparent;color:var(--ink);padding:12px 18px;font-size:14px}.summary-body{white-space:pre-wrap;word-break:break-word;font-size:14px;line-height:2;padding:21px 23px;background:#e8ebdf;margin-top:23px;border-left:2px solid #93a17d}.success-label{color:#677b4e;font-size:12px;display:flex;gap:8px;align-items:center;margin-top:20px}.status-message{min-height:22px;font-size:12px;color:#8b4e32;margin-top:10px}.summary-notice{font-size:12px;color:var(--muted);line-height:1.9;margin-top:17px}.preview-dialog{width:min(1080px,calc(100% - 32px));background:var(--ink);color:var(--paper)}.preview-dialog .dialog-content{padding:19px}.preview-image{height:min(65vh,650px);margin-top:17px;object-fit:contain;background:#1c211c}.preview-caption{font-size:13px;margin-top:14px;color:#c0c6b5}.preview-caption small{display:block;color:#89937f;font-size:11px;margin-top:5px}[hidden]{display:none!important}
+    .reveal{transition:opacity .8s ease,transform .8s ease}.js-motion .reveal:not(.visible){opacity:0;transform:translateY(28px)}@keyframes rise-in{from{opacity:0;transform:translateY(23px)}to{opacity:1;transform:none}}@keyframes hero-arrive{from{transform:scale(1.09)}to{transform:scale(1.04)}}@keyframes scroll-line{0%,100%{opacity:.4;transform:scaleY(.7);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+    @media(min-width:1650px){.hero-content{padding-top:230px}.hero h1{font-size:82px}.hero-grid{inset-inline:calc((100% - 1320px)/2)}.hero-bottom{left:calc((100% - 1320px)/2);right:calc((100% - 1320px)/2)}.hero-index{right:calc((100% - 1320px)/2)}.round-cta{right:calc((100% - 1320px)/2)}}
+    @media(max-width:1100px){.container{width:calc(100% - 64px)}.nav{gap:23px}.hero-grid{inset-inline:32px}.hero-bottom{left:32px;right:32px}.hero-index{right:32px}.hero-note{right:65px;top:57%}.round-cta{right:32px;width:98px;height:98px}.quick-inquiry{padding:24px 20px;grid-template-columns:1fr 1fr 1fr .8fr 1.13fr}.quick-intro{font-size:16px;padding-left:0}.quick-field{padding-inline:16px}.quick-submit{padding:17px 15px;font-size:13px;gap:8px}.intro-layout{gap:50px}.services-layout{gap:60px}.services h2{font-size:34px}.space-grid{gap:30px}.image-wrap{height:400px}.space-card:nth-child(2) .image-wrap{height:350px}.footer-middle{display:none}.contact-actions{padding-right:0}}
+    @media(max-width:800px){.container{width:calc(100% - 48px)}.site-header{height:82px}.brand-description{font-size:9px;padding-left:12px}.brand{gap:12px}.wordmark{font-size:46px}.nav{gap:20px}.nav>a{display:none}.header-cta{font-size:12px;padding:9px 13px;gap:13px}.hero{min-height:710px;height:86svh;max-height:850px}.hero-content{padding-top:181px}.hero h1{font-size:clamp(43px,6.9vw,64px);letter-spacing:-2.5px}.hero-sub{font-size:14px}.hero-note{right:50px;top:64%}.hero-grid{inset:82px 24px 0}.hero-index{right:24px;top:118px}.hero-bottom{left:24px;right:24px;bottom:83px}.hero-caption{display:none}.round-cta{right:24px;top:auto;bottom:92px;width:90px;height:90px;font-size:11px}.hero-note{display:none}.quick-inquiry{grid-template-columns:repeat(3,1fr);gap:19px 0;padding:23px 25px;margin-top:-45px}.quick-intro{grid-column:1/3;font-size:16px}.quick-intro br{display:none}.quick-field{grid-row:2}.quick-field:nth-child(2){border-left:0;padding-left:0}.quick-submit{grid-column:3;grid-row:1;padding:10px 12px;font-size:12px;justify-self:end}.quick-submit .icon{width:17px}.quick-field:last-of-type{padding-right:0}.intro{padding:85px 0 56px}.intro-layout{gap:30px}.intro-heading{font-size:33px}.intro-copy{font-size:13px;padding-top:4px}.intro-meta{flex-direction:column;align-items:flex-start;gap:8px;font-size:10px}.trust-row{margin-top:44px;padding-block:20px}.trust-item{gap:10px}.trust-item strong{font-size:13px}.trust-item span{font-size:10px}.trust-item .trust-icon{width:27px;height:27px}.spaces{padding-bottom:75px}.section-top{align-items:flex-start}.section-heading{font-size:33px;letter-spacing:-1.5px}.section-aside{font-size:11px;max-width:160px;padding-top:38px}.space-grid{gap:25px}.image-wrap{height:320px}.space-card:nth-child(2){padding-top:80px}.space-card:nth-child(2) .image-wrap{height:295px}.space-details h3{font-size:19px}.space-details p{font-size:11px}.space-details{gap:10px;margin-top:17px}.image-label{left:15px;top:15px;font-size:10px}.space-footnote{font-size:10px}.services{padding:65px 0 72px}.services-layout{gap:40px;grid-template-columns:.95fr 1fr}.services h2{font-size:29px;margin-top:25px}.services .italic{font-size:43px}.services-intro>p{font-size:12px}.service-row h3{font-size:18px}.service-row summary{gap:18px;padding-block:20px}.service-row p{font-size:12px;padding-left:35px}.services-link{font-size:11px;gap:10px}.services-link button{font-size:11px}.process{padding:73px 0}.process-grid{gap:25px}.process-card h3{font-size:19px;margin-top:23px}.process-card p{font-size:12px}.process-card small{font-size:10px}.contact{padding-block:59px}.contact h2{font-size:37px}.contact-button{width:115px;height:115px;font-size:13px}.contact p{font-size:12px}.footer-channels{gap:13px;font-size:11px}}
+    @media(max-width:560px){body{font-size:15px}.container{width:calc(100% - 40px)}.site-header{height:74px}.site-header.is-fixed{height:66px}.brand-description{font-size:8px;letter-spacing:1px}.wordmark{font-size:42px}.header-cta{display:none}.menu-toggle{display:block}.nav{gap:0}.nav.is-open{position:absolute;top:74px;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;background:#252a25fa;padding:18px 25px 24px;gap:5px}.is-fixed .nav.is-open{top:66px}.nav.is-open>a{display:block;padding:12px 0;font-size:15px}.nav.is-open .header-cta{display:flex;margin-top:10px;justify-content:space-between}.nav.is-open .menu-toggle{position:absolute;top:-62px;right:20px}.nav.is-open .menu-toggle span:first-child{transform:translateY(3.5px) rotate(45deg)}.nav.is-open .menu-toggle span:last-child{transform:translateY(-3.5px) rotate(-45deg)}.hero{height:790px;min-height:0;max-height:none}.hero-photo{object-position:61% center}.hero::before{background:linear-gradient(90deg,#17231db3,#17231d20),linear-gradient(0deg,#17231d9c,transparent 45%,#17231d3b)}.hero-content{padding-top:177px}.hero-kicker{font-size:10px;letter-spacing:1.8px;gap:12px}.hero-kicker .line{width:24px}.hero h1{font-size:43px;line-height:1.38;letter-spacing:-2.6px;margin:24px 0 22px}.hero-sub{font-size:13px;line-height:1.95;max-width:290px}.hero-action{font-size:13px;margin-top:20px;gap:35px}.hero-index{top:106px;right:20px;font-size:10px;gap:10px}.hero-index span{width:42px}.hero-grid{inset:74px 20px 0}.hero-bottom{left:20px;right:20px;bottom:119px}.scroll-hint{font-size:9px;letter-spacing:1.5px}.scroll-hint::before{height:35px}.round-cta{right:21px;bottom:114px;width:86px;height:86px}.quick-inquiry{margin-top:-76px;grid-template-columns:1fr 1fr 1fr;padding:23px 20px 22px;gap:20px 0}.quick-intro{font-size:14px;letter-spacing:-.5px;grid-column:1/-1}.quick-field{padding-inline:9px}.quick-field label{font-size:9px;letter-spacing:.5px}.quick-field select{font-size:12px;padding-right:0}.quick-submit{grid-row:3;grid-column:1/-1;justify-self:stretch;padding:12px 16px;font-size:13px}.intro{padding-top:72px}.eyebrow{font-size:10px;letter-spacing:1.7px;gap:9px}.intro-layout{grid-template-columns:1fr;gap:25px;margin-top:23px}.intro-heading{font-size:35px;letter-spacing:-1.8px}.intro-copy{font-size:14px;line-height:1.95;max-width:450px}.intro-meta{flex-direction:row;align-items:center;margin-top:22px;font-size:10px}.busan-tag{font-size:11px}.trust-row{margin-top:35px;padding-block:20px}.trust-item{flex-direction:column;gap:9px;text-align:center}.trust-item strong{font-size:11px;letter-spacing:-.4px}.trust-item span{font-size:9px}.trust-item .trust-icon{width:25px;height:25px}.spaces{padding-top:9px;padding-bottom:62px}.section-top{display:block;margin-bottom:28px}.section-heading{font-size:31px;letter-spacing:-1.5px}.section-top h2{margin-top:17px}.section-aside{text-align:left;max-width:none;padding-top:15px;font-size:12px}.section-aside br{display:none}.space-grid{grid-template-columns:1fr;gap:34px}.space-card:nth-child(2){padding-top:0;padding-left:42px}.image-wrap{height:345px}.space-card:nth-child(2) .image-wrap{height:330px}.space-details h3{font-size:21px}.space-details p{font-size:12px}.space-number{font-size:11px}.space-footnote{font-size:10px;line-height:1.8;margin-top:24px;align-items:flex-start}.space-footnote::before{margin-top:8px;flex-shrink:0;width:15px}.services{padding:56px 0 62px}.services-layout{grid-template-columns:1fr;gap:37px}.services h2{font-size:32px}.services .italic{font-size:48px;line-height:1.4;margin-top:15px}.services-intro>p{font-size:13px;margin-top:21px}.service-row h3{font-size:19px}.service-row summary{padding-block:22px}.service-row p{font-size:13px}.services-link{font-size:12px}.services-link button{font-size:12px}.services::after{font-size:350px;bottom:-100px}.process{padding-block:60px}.process .section-top{margin-bottom:31px}.process-grid{grid-template-columns:1fr;gap:27px}.process-card{display:grid;grid-template-columns:35px 1fr;column-gap:12px;padding-top:21px}.process-card h3{margin:0;font-size:20px}.process-number{padding-top:4px;font-size:12px}.process-card p{grid-column:2;margin-top:8px;font-size:13px}.process-card small{grid-column:2;margin-top:12px}.process-card:not(:last-child)::after{top:19px;right:3px}.contact{padding-block:46px}.contact-inner{display:block}.contact h2{font-size:32px;letter-spacing:-1.7px}.contact p{font-size:12px;max-width:220px;line-height:1.9}.contact-button{position:absolute;bottom:0;right:0;width:81px;height:81px;font-size:10px;gap:6px}.contact-button svg{width:20px;height:20px}.contact-watermark{right:25px;top:100px;font-size:170px}.contact .eyebrow{font-size:9px}.footer{padding-top:31px;padding-bottom:85px}.footer-top{align-items:flex-start;gap:15px}.footer .brand{gap:11px}.footer .brand-description{font-size:8px}.footer .wordmark{font-size:43px}.footer-channels{gap:9px;flex-direction:column;align-items:flex-start;font-size:10px}.footer-channels svg{width:10px;height:10px}.footer-bottom{font-size:9px;gap:12px;align-items:flex-start}.back-top{font-size:9px;gap:5px;white-space:nowrap}.mobile-bottom{position:fixed;z-index:15;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:15px;background:var(--ink);color:white;padding:12px 20px calc(12px + env(safe-area-inset-bottom));transform:translateY(120%);transition:transform .3s}.mobile-bottom.shown{transform:translateY(0)}.mobile-bottom span{font-size:11px;color:#d2d9c9}.mobile-bottom button{border:0;color:white;background:var(--orange);font-size:12px;padding:9px 15px;display:flex;gap:18px;align-items:center}.mobile-bottom svg{width:16px}.dialog-content{padding:23px 22px}.dialog-title{font-size:25px;margin-top:20px}.dialog-intro{font-size:12px}.form-grid{gap:17px 13px}.form-field input,.form-field select,.form-field textarea{font-size:16px;padding:9px 10px}.form-field label{font-size:12px}.form-help{font-size:11px}.form-actions{flex-wrap:wrap;gap:9px}.form-actions>*{flex:1;min-width:100px;font-size:13px;padding-inline:12px}.summary-body{font-size:12px;padding:17px}.dialog-close{width:33px;height:33px}.preview-image{height:auto;max-height:65vh}.preview-caption{font-size:12px}}
+    @media(max-width:360px){.hero h1{font-size:37px}.header-inner{gap:15px}.brand-description{font-size:7px}.intro-heading{font-size:31px}.section-heading{font-size:28px}.contact h2{font-size:28px}.contact-button{width:72px;height:72px}.footer .brand-description{display:none}}
+    /* The first screen is a spatial walk-through: scroll moves the viewpoint through the entry. */
+    .walkthrough{height:170svh;position:relative}.walkthrough .hero{height:100svh;min-height:650px;max-height:none;position:sticky;top:0;--journey:0;--look-x:0px;--look-y:0px}.scene{position:absolute;inset:-14px;z-index:-3;transform:translate3d(var(--look-x),var(--look-y),0);transition:transform 1.1s cubic-bezier(.16,1,.3,1)}.scene .hero-photo{position:absolute;inset:0;animation:none;transform:scale(calc(.96 + var(--journey)*.09));object-position:center 55%;filter:brightness(calc(.76 + var(--journey)*.24))}.entrance-photo{position:absolute;inset:0;object-position:center;transform:scale(calc(1 + var(--journey)*.84));transform-origin:56% 51%;opacity:clamp(0,calc(1.75 - var(--journey)*2.2),1);will-change:transform,opacity}.walkthrough .hero::before{background:linear-gradient(90deg,#10201658,#10201608 70%),linear-gradient(0deg,#10191191,transparent 30%,transparent 65%,#121b1560);z-index:-1}.walkthrough .hero-grid{display:none}.walkthrough .hero-content{padding-top:clamp(200px,29vh,330px);opacity:clamp(0,calc(1 - var(--journey)*2.5),1);transform:translateY(calc(var(--journey)*-50px));will-change:opacity,transform}.walkthrough .hero h1{font-size:clamp(45px,4.4vw,67px);line-height:1.4;font-weight:300;letter-spacing:-2.8px;text-shadow:0 2px 35px #0002}.walkthrough .hero-kicker{font-size:11px;letter-spacing:3px}.walkthrough .hero-action{margin-top:24px;gap:46px;font-size:14px}.walkthrough .hero-sub{font-size:14px;line-height:2}.walkthrough .hero-bottom{bottom:43px;transition:opacity .2s}.walkthrough .hero-note,.walkthrough .round-cta{display:none}.walkthrough .hero-index{top:125px}.entrance-small{display:flex;align-items:center;gap:9px;margin-top:15px;font-size:10px;letter-spacing:.4px;color:#ffffff80}.entrance-small svg{height:14px;width:14px}.room-message{position:absolute;left:56px;bottom:109px;opacity:clamp(0,calc((var(--journey) - .58)*3.3),1);transform:translateY(calc((1 - var(--journey))*25px));pointer-events:none}.room-message .eyebrow{font-size:10px;letter-spacing:3px;color:#ffffffbd}.room-message h2{font-size:clamp(34px,3.5vw,53px);font-weight:300;letter-spacing:-2px;line-height:1.4;margin-top:16px}.room-message p{font-size:13px;color:#ffffffbc;margin-top:18px}.room-controls{position:absolute;right:56px;bottom:116px;text-align:right;opacity:clamp(0,calc((var(--journey) - .65)*4),1);pointer-events:none}.room-controls button{display:flex;gap:11px;align-items:center;border:0;background:#ffffff15;backdrop-filter:blur(15px);border:1px solid #ffffff4a;padding:10px 15px;color:white;font-size:11px;letter-spacing:.5px}.room-controls .icon{height:15px;width:15px}.room-controls p{font-size:10px;color:#ffffff99;letter-spacing:1px;margin-top:10px}.room-hotspots{position:absolute;inset:0;pointer-events:none;opacity:clamp(0,calc((var(--journey) - .65)*4),1);transition:opacity .2s}.room-hotspot{position:absolute;pointer-events:none;display:flex;align-items:center;gap:13px;transform:translate(calc(var(--look-x)*.8),calc(var(--look-y)*.8));transition:transform 1.1s cubic-bezier(.16,1,.3,1);z-index:2}.room-hotspot[data-detail="wood"]{left:27%;top:41%}.room-hotspot[data-detail="sofa"]{left:64%;top:63%}.room-hotspot[data-detail="light"]{right:8%;top:34%}.hotspot-toggle{position:relative;background:#26382c45;border:1px solid #ffffff90;backdrop-filter:blur(7px);height:32px;width:32px;border-radius:50%;color:white;display:grid;place-items:center;padding:0;transition:background .2s,transform .2s;flex:none}.hotspot-toggle::before{content:'';position:absolute;inset:-7px;border:1px solid #ffffff25;border-radius:50%}.hotspot-toggle span{font-size:19px;font-weight:300;line-height:1;transition:transform .2s}.hotspot-toggle:hover{background:var(--orange);transform:scale(1.08)}.hotspot-toggle[aria-expanded="true"]{background:var(--orange);border-color:var(--orange)}.hotspot-toggle[aria-expanded="true"] span{transform:rotate(45deg)}.hotspot-caption{font-size:11px;text-shadow:0 1px 8px #0006;letter-spacing:1px;white-space:nowrap}.hotspot-panel{position:absolute;top:53px;left:0;background:#f4f3eef2;backdrop-filter:blur(20px);color:var(--ink);padding:21px 23px;width:240px;box-shadow:0 12px 30px #0002;border-top:2px solid var(--orange)}.hotspot-panel small{font-size:10px;color:#8c987d;letter-spacing:2px}.hotspot-panel h3{font-size:18px;font-weight:500;letter-spacing:-.6px;margin-top:8px}.hotspot-panel p{font-size:12px;color:#747d6a;line-height:1.9;margin-top:9px}.room-hotspot[data-detail="light"] .hotspot-panel{left:auto;right:0}.hero.is-inside .room-hotspot,.hero.is-inside .room-controls{pointer-events:auto}.hero.is-inside .hero-content{pointer-events:none}.hero.is-inside .hero-content a{visibility:hidden}.journey-line{position:absolute;bottom:0;left:0;height:2px;width:100%;background:#ffffff12;z-index:5}.journey-line::before{content:'';display:block;height:100%;width:calc(var(--journey)*100%);background:#e6ac7b}.walkthrough+.quick-inquiry{margin-top:0}.walkthrough .hero-caption{font-size:10px;letter-spacing:1px}.walkthrough .hero-caption strong{font-size:12px}.walkthrough .scroll-hint{font-size:10px;letter-spacing:2px}.walkthrough .scroll-hint::before{height:32px}.walkthrough .hero-photo,.entrance-photo{user-select:none}.walkthrough .room-message p{max-width:300px}.scene-entered-label{display:inline-block;opacity:0;transition:opacity .3s}.hero.is-inside .scene-entered-label{opacity:1}
+    @media(min-width:1650px){.room-message{left:calc((100% - 1320px)/2)}.room-controls{right:calc((100% - 1320px)/2)}}
+    @media(max-width:1100px){.room-message{left:32px}.room-controls{right:32px}.walkthrough .hero-content{padding-top:27vh}.room-hotspot[data-detail="wood"]{left:23%;top:37%}}
+    @media(max-width:800px){.walkthrough .hero{min-height:620px}.walkthrough .hero-content{padding-top:27vh}.walkthrough .hero h1{font-size:48px}.room-message{left:24px;bottom:107px}.room-controls{right:24px;bottom:111px}.room-message h2{font-size:36px}.room-message p{font-size:12px;max-width:260px}.room-hotspot[data-detail="wood"]{left:20%;top:31%}.room-hotspot[data-detail="light"]{right:10%;top:39%}.room-hotspot[data-detail="sofa"]{left:61%;top:60%}.hotspot-caption{font-size:10px}.walkthrough .hero-bottom{bottom:32px}}
+    @media(max-width:560px){.walkthrough{height:170svh}.walkthrough .hero{min-height:620px}.walkthrough .hero-content{padding-top:26vh}.walkthrough .hero h1{font-size:38px;letter-spacing:-2px;line-height:1.5;margin-top:23px}.walkthrough .hero-kicker{font-size:9px;letter-spacing:1.9px}.walkthrough .hero-sub{font-size:12px;max-width:230px}.walkthrough .hero-action{font-size:13px;gap:30px;margin-top:23px}.entrance-small{font-size:9px}.walkthrough .hero-index{top:102px;font-size:9px}.scene .hero-photo{object-position:62% center}.entrance-photo{object-position:56% center;transform-origin:55% 50%}.room-message{left:20px;bottom:105px}.room-message h2{font-size:31px;letter-spacing:-1.6px}.room-message .eyebrow{font-size:9px}.room-message p{font-size:11px;max-width:195px;line-height:1.9;margin-top:14px}.room-controls{right:20px;bottom:110px}.room-controls button{font-size:9px;gap:7px;padding:9px 10px}.room-controls p{font-size:8px;letter-spacing:.4px}.room-hotspot[data-detail="wood"]{left:11%;top:27%}.room-hotspot[data-detail="light"]{right:8%;top:34%}.room-hotspot[data-detail="sofa"]{left:49%;top:54%}.hotspot-caption{font-size:9px;letter-spacing:.4px}.hotspot-toggle{width:26px;height:26px}.hotspot-toggle span{font-size:16px}.hotspot-toggle::before{inset:-5px}.room-hotspot{gap:9px}.hotspot-panel{width:207px;top:45px;padding:16px 18px}.hotspot-panel h3{font-size:16px}.hotspot-panel p{font-size:11px}.room-hotspot[data-detail="sofa"] .hotspot-panel{left:auto;right:-24px}.walkthrough .hero-bottom{bottom:29px}.walkthrough .scroll-hint{font-size:8px;letter-spacing:1.2px}.walkthrough .hero-caption{display:block;font-size:8px;max-width:152px}.walkthrough .hero-caption strong{font-size:9px}.mobile-bottom.shown{transform:translateY(120%)}.mobile-bottom.shown.past-home{transform:translateY(0)}}
+    @media(max-width:360px){.walkthrough .hero h1{font-size:33px}.room-message h2{font-size:28px}.room-controls{bottom:116px;right:15px}.room-controls button{font-size:8px;padding:8px}.room-controls p{display:none}.room-message p{max-width:170px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js-motion .reveal:not(.visible){opacity:1;transform:none}.hero-photo{transform:none}.scene{transform:none}.scene .hero-photo,.entrance-photo{transform:none;filter:none}.entrance-photo{opacity:clamp(0,calc(1 - var(--journey)*2),1)}.walkthrough .hero-content,.room-message{transform:none}}
+    /* Optical type, spacing rhythm and physical-sized controls. */
+    :root{--space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2rem;--space-5:3rem;--space-6:4rem;--space-7:6rem}
+    body{letter-spacing:0;line-height:1.75;font-optical-sizing:auto}.walkthrough .hero h1{letter-spacing:-.025em;line-height:1.35;font-weight:400}.section-heading,.intro-heading,.services h2,.contact h2{letter-spacing:-.02em;line-height:1.45}.room-message h2{letter-spacing:-.02em;line-height:1.4}.space-details h3,.service-row h3,.process-card h3,.hotspot-panel h3,.dialog-title{letter-spacing:-.012em;line-height:1.45}.intro-copy,.services-intro>p,.service-row p,.process-card p{font-size:.9375rem;line-height:1.85;letter-spacing:0}.walkthrough .hero-sub{font-size:.9375rem;line-height:1.85;max-width:25rem}.eyebrow,.walkthrough .hero-kicker,.room-message .eyebrow{font-size:.75rem;line-height:1.5;letter-spacing:.12em}.entrance-small,.hotspot-caption,.room-controls p,.image-label,.image-concept,.space-footnote,.process-card small,.form-help,.preview-caption small,.footer-bottom{font-size:.75rem;line-height:1.65;letter-spacing:.025em}.quick-field label,.form-field label span{font-size:.75rem;letter-spacing:.025em}.quick-field select{font-size:.9375rem;min-height:2.75rem}.intro{padding:6rem 0 5rem}.spaces{padding:2rem 0 6rem}.services,.process{padding-block:6rem}.contact{padding-block:5rem}.intro-layout{margin-top:2rem}.section-top{margin-bottom:2.5rem}.section-top h2{margin-top:1rem}.space-details{margin-top:1.5rem}.process-card p{margin-top:.75rem}.hero-action,.header-cta,.room-controls button,.services-link button,.back-top,.quick-submit,.secondary-btn,.mobile-bottom button{min-height:2.75rem;font-size:.875rem}.hotspot-toggle,.dialog-close{width:2.75rem;height:2.75rem;min-width:2.75rem;min-height:2.75rem}.hotspot-panel{top:3.75rem}.file-preview button::after{content:'';position:absolute;inset:-12px}.hero-action:active,.room-controls button:active,.quick-submit:active,.primary-btn:active,.dialog-close:active{transform:scale(.98);transition:transform 100ms ease-out}.brand-description{font-size:.6875rem;letter-spacing:.06em;line-height:1.65}.nav{gap:2rem}.trust-item strong{font-size:.9375rem;line-height:1.5}.trust-item span,.space-details p,.section-aside,.footer-channels,.image-concept,.space-number{font-size:.8125rem;line-height:1.7}.footer-bottom{flex-wrap:wrap;row-gap:.75rem}.quick-inquiry{padding-block:1.5rem}.quick-intro{letter-spacing:-.012em;line-height:1.5}.form-field{gap:.5rem}.form-grid{gap:1.25rem}.dialog-intro{font-size:.875rem;line-height:1.75}
+    .walkthrough{height:210svh;min-height:1050px}.walkthrough .hero{height:100svh;min-height:0;max-height:none}.three-stage{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity .7s;background:#28251f}.three-stage canvas{display:block;width:100%;height:100%;touch-action:pan-y}.webgl-ready .three-stage{opacity:1}.webgl-ready .scene{visibility:hidden}.webgl-ready .hero-content{pointer-events:none;z-index:2;max-width:1320px}.webgl-ready .hero-content a{pointer-events:auto}.webgl-ready .hero-content h1{font-size:clamp(2.5rem,3.8vw,3.7rem);max-width:38rem}.webgl-ready .hero-content .hero-sub{max-width:24rem}.webgl-ready .hero::before{background:linear-gradient(90deg,#111d18a0,transparent 48%),linear-gradient(0deg,#0c1517a6,transparent 27%,transparent 80%,#17231b3d)}.webgl-ready .hero{cursor:grab}.webgl-ready .hero.is-dragging{cursor:grabbing}.webgl-ready .hero.is-dragging *{user-select:none}.webgl-ready .hero.is-dragging .scene{transition:none}.hero .hero-content{pointer-events:none}.hero .hero-content a{pointer-events:auto}.room-message{bottom:170px}.room-controls{bottom:165px;z-index:4}.room-hotspots{z-index:3}.room-hotspot .hotspot-panel{top:3.75rem}.journey-transport{position:absolute;z-index:5;bottom:72px;left:50%;transform:translateX(-50%);width:min(420px,calc(100% - 48px));display:flex;align-items:center;gap:12px;padding:7px 12px;border:1px solid #ffffff3b;background:#17231f52;backdrop-filter:blur(20px);border-radius:5px}.transport-button{display:grid;place-items:center;flex:none;width:44px;height:44px;border:0;border-radius:3px;background:none;color:white;font-size:20px}.transport-button:hover{background:#ffffff15}.transport-button:active{background:#ffffff28}.transport-button svg{width:17px;height:17px;fill:currentColor;stroke:none}.transport-button.is-playing .play-symbol{display:none}.transport-button:not(.is-playing) .pause-symbol{display:none}.transport-track{min-width:0;flex:1}.transport-track label{display:block;font-size:11px;letter-spacing:.05em;color:#e4e9df;line-height:1.4}.transport-track input{width:100%;height:24px;display:block;accent-color:#eab58a;cursor:ew-resize;margin:0;touch-action:none}.transport-count{font-size:11px;min-width:33px;font-variant-numeric:tabular-nums;color:#d2dbcd;text-align:right}.journey-reset{font-size:23px}.walkthrough .hero-bottom{bottom:24px}.walkthrough .scroll-hint{min-height:44px}.walkthrough .hero-caption{font-size:12px;line-height:1.5;letter-spacing:.01em}.walkthrough .hero-caption strong{font-size:12px}.tour-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.entrance-small{max-width:25rem;color:#ffffffbf}.webgl-ready .hero-content h1 em{font-weight:300}
+    @media(max-width:1100px){.webgl-ready .hero-content h1{max-width:31rem;font-size:3rem}.webgl-ready .hero-content .hero-sub{max-width:23rem}.walkthrough .hero-content{padding-top:25vh}.quick-field{padding-inline:1rem}.room-message p{font-size:.875rem;line-height:1.8}.room-controls p{max-width:210px}}
+    @media(max-width:800px){.intro,.services,.process{padding-block:4.5rem}.spaces{padding-bottom:4.5rem}.contact{padding-block:4rem}.nav{gap:1rem}.brand-description{font-size:.625rem}.walkthrough .hero-content{padding-top:21vh}.webgl-ready .hero-content h1{font-size:2.6rem;max-width:29rem}.room-message{bottom:170px}.room-message p{max-width:240px}.room-controls button{font-size:.8125rem}.room-controls p{max-width:160px;font-size:.75rem}.trust-item span{font-size:.75rem}.trust-item strong{font-size:.8125rem}.trust-row{gap:.5rem}.section-aside{font-size:.8125rem}.process-grid{gap:2rem}.walkthrough .hero-kicker{font-size:.6875rem}.intro-meta{letter-spacing:.03em;font-size:.75rem}}
+    @media(max-width:560px){body{font-size:.9375rem;line-height:1.8}.intro,.services,.process{padding-block:4rem}.spaces{padding:1.5rem 0 4rem}.contact{padding-block:3.5rem}.section-top{margin-bottom:2rem}.section-heading,.intro-heading,.services h2,.contact h2{letter-spacing:-.015em;line-height:1.45}.walkthrough .hero h1{font-size:clamp(2rem,8.5vw,2.375rem);letter-spacing:-.018em;line-height:1.4}.webgl-ready .hero-content h1{font-size:clamp(1.875rem,7.9vw,2.25rem);max-width:100%;line-height:1.38;margin:1rem 0}.walkthrough .hero-content{padding-top:120px}.webgl-ready .hero-content .hero-sub{font-size:.875rem;line-height:1.75;max-width:24rem}.walkthrough .hero-action{font-size:.875rem;min-height:48px;margin-top:1rem;padding-block:.75rem;gap:2rem}.walkthrough .hero-kicker{font-size:.625rem;letter-spacing:.09em}.entrance-small{font-size:.75rem;max-width:19rem;line-height:1.7;margin-top:.5rem}.webgl-ready .hero-content .hero-sub{display:none}.webgl-ready .hero-content .hero-action{margin-top:0}.webgl-ready .hero-content .entrance-small{font-size:.75rem;max-width:20rem}.room-message{bottom:185px}.room-message h2{font-size:1.875rem;letter-spacing:-.015em}.room-message p{font-size:.8125rem;max-width:210px}.room-controls{bottom:132px;left:20px;right:auto;text-align:left}.room-controls p{display:none}.room-controls button{font-size:.75rem;padding:.5rem .75rem;min-height:44px}.room-message .eyebrow{font-size:.75rem;letter-spacing:.08em}.journey-transport{bottom:64px;padding:4px 7px;gap:8px;width:calc(100% - 40px)}.transport-track label,.transport-count{font-size:.75rem}.transport-button{width:44px;height:44px}.room-hotspot[data-detail="wood"]{left:10%;top:29%}.room-hotspot[data-detail="light"]{right:7%;top:30%}.room-hotspot[data-detail="sofa"]{left:52%;top:47%}.hotspot-caption{font-size:.75rem;letter-spacing:.01em}.room-hotspot[data-detail="light"] .hotspot-caption{display:none}.hotspot-panel{width:210px;padding:1rem}.hotspot-panel p{font-size:.8125rem;line-height:1.8}.hotspot-panel small{font-size:.6875rem;letter-spacing:.1em}.trust-item strong{font-size:.75rem}.trust-item span{font-size:.75rem;max-width:95px}.quick-intro{font-size:1rem}.quick-field{padding-inline:.5rem}.quick-field label{font-size:.6875rem;letter-spacing:0;white-space:nowrap}.quick-field select{font-size:.8125rem;min-height:44px}.quick-submit{font-size:.875rem;min-height:48px}.space-details h3{font-size:1.3125rem}.space-details p{font-size:.75rem}.image-label,.image-concept,.space-number,.space-footnote{font-size:.75rem}.space-footnote{line-height:1.8}.intro-copy,.service-row p,.process-card p{font-size:.9375rem}.section-aside{font-size:.875rem;line-height:1.8}.services-intro>p{font-size:.9375rem}.footer .brand-description{font-size:.625rem}.footer-channels{font-size:.75rem;gap:.5rem}.footer-bottom{font-size:.75rem;line-height:1.7}.back-top{font-size:.75rem}.contact p{font-size:.875rem;max-width:235px}.contact-button{width:92px;height:92px;font-size:.75rem}.contact h2{font-size:1.875rem}.contact .eyebrow{font-size:.625rem;max-width:290px;line-height:1.6;letter-spacing:.08em}.footer{padding-bottom:7rem}.form-help,.form-field label span,.summary-notice{font-size:.75rem;line-height:1.75}.form-field label{font-size:.875rem}.form-grid{gap:1rem}.form-field input,.form-field select,.form-field textarea{font-size:1rem}.summary-body{font-size:.875rem}.form-actions>*{min-height:48px}.dialog-title{font-size:1.5rem}.walkthrough .hero-bottom{bottom:10px;align-items:center}.walkthrough .scroll-hint{font-size:10px;letter-spacing:.06em}.walkthrough .hero-caption{font-size:10px;max-width:132px;line-height:1.55}.walkthrough .hero-caption strong{font-size:10px}.hero-index{display:none}.brand-description{font-size:.5625rem;letter-spacing:.05em}}
+    @media(max-width:380px){.brand-description{display:none}.contact-button{position:static;margin-top:1.5rem}.contact p{max-width:none}.intro-meta{flex-direction:column;align-items:flex-start}.hotspot-caption{display:none}.room-message p{font-size:.75rem}.room-message h2{font-size:1.75rem}.footer-channels{flex-direction:row;gap:.75rem}.trust-item strong{font-size:.6875rem}.trust-item span{font-size:.6875rem}.walkthrough .hero-content{padding-top:104px}}
+    @media(max-height:600px) and (min-width:561px){.walkthrough .hero-content{padding-top:110px}.webgl-ready .hero-content h1{font-size:2rem;margin-block:1rem}.webgl-ready .hero-content .hero-sub,.entrance-small{display:none}.walkthrough .hero-action{margin-top:0}.room-message{bottom:128px}.room-message h2{font-size:1.8rem}.room-message p{display:none}.room-controls{bottom:133px}.walkthrough .hero-index{display:none}}
+    @media(pointer:coarse){.hotspot-toggle,.dialog-close{width:48px;height:48px;min-width:48px;min-height:48px}.primary-btn,.quick-submit,.mobile-bottom button{min-height:48px}}
+    @media(prefers-reduced-motion:reduce){.three-stage{transition:none}.hero-action:active,.room-controls button:active,.quick-submit:active,.primary-btn:active,.dialog-close:active{transform:none}.webgl-ready .hero{cursor:auto}}
+  </style>
+  <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol><symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol><symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol><symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol></svg>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="올 인테리어 디자인 처음으로"><span class="wordmark">all.</span><span class="brand-description">ALL INTERIOR<br>올 인테리어 디자인</span></a>
+      <nav class="nav" id="nav" aria-label="메인 메뉴">
+        <a href="#about">올의 이야기</a><a href="#spaces">공간 둘러보기</a><a href="#services">시공 서비스</a><a href="#process">함께하는 과정</a>
+        <button class="header-cta" data-quote>무료 견적 상담 <svg class="icon"><use href="#arrow-up-right"/></svg></button>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="메뉴 열기"><span></span><span></span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="walkthrough" id="walkthrough"><section class="hero" id="home-scene" aria-labelledby="hero-title">
+      <div class="scene"><img class="hero-photo" src="assets/living-room.webp" alt="햇살이 스며드는 우드와 스톤 소재의 거실 인테리어 콘셉트" width="1672" height="941" fetchpriority="high"><img class="entrance-photo" src="assets/entrance.webp" alt="따뜻한 거실로 이어지는 월넛 현관 입구" width="1672" height="941" fetchpriority="high"></div>
+      <div class="three-stage" id="three-stage" aria-hidden="true"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-index" aria-hidden="true">01 <span></span> ALL</div>
+      <div class="container hero-content">
+        <p class="hero-kicker"><span class="line"></span> YOUR NEW LIFE, JUST INSIDE.</p>
+        <h1 id="hero-title">어서 오세요.<br><em>당신의 새로운 공간으로.</em></h1>
+        <p class="hero-sub">문을 여는 순간, 시작되는 다른 일상.<br>올이 그린 공간 안으로 들어와 보세요.</p>
+        <a href="#about" class="hero-action" id="enter-home">문을 열고 들어가기 <svg class="icon"><use href="#arrow-right"/></svg></a>
+        <p class="entrance-small">또는 천천히 아래로 스크롤해 보세요</p>
+      </div>
+      <div class="hero-note" aria-hidden="true"><span class="point"></span><span class="note-line"></span><div class="hero-note-text"><small>THE MOOD OF ALL</small>Warmth in every detail.</div></div>
+      <button class="round-cta" data-quote aria-label="내 공간 무료 견적 상담 시작">당신의 공간은<br>어떤 모습인가요?<svg class="icon"><use href="#arrow-up-right"/></svg></button>
+      <div class="room-message" aria-hidden="true" id="room-message"><p class="eyebrow">01 / THE LIVING ROOM</p><h2>돌아오고 싶은 곳.<br>바로, 나의 집.</h2><p>발끝에 닿는 질감부터 오후의 빛까지.<br>일상의 모든 순간을 생각한 공간.</p></div>
+      <div class="room-hotspots" id="room-hotspots" inert aria-label="거실의 공간 디테일">
+        <div class="room-hotspot" data-detail="wood"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-wood" aria-label="우드 마감 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">01 &nbsp; MATERIAL</span><div class="hotspot-panel" id="detail-wood" hidden><small>THE TOUCH OF WOOD</small><h3>온기를 더하는 나무</h3><p>벽에서 천장으로 이어지는 우드 톤. 재료의 결을 따라 공간이 한층 깊고 편안해집니다.</p></div></div>
+        <div class="room-hotspot" data-detail="sofa"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-sofa" aria-label="거실 공간 구성 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">02 &nbsp; LIVING</span><div class="hotspot-panel" id="detail-sofa" hidden><small>ROOM TO SLOW DOWN</small><h3>쉬어가는 자리</h3><p>시선이 열리는 배치와 부드러운 소재. 함께 앉아 이야기하기 좋은 거실을 상상해보세요.</p></div></div>
+        <div class="room-hotspot" data-detail="light"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-light" aria-label="창과 자연광 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">03 &nbsp; LIGHT</span><div class="hotspot-panel" id="detail-light" hidden><small>LET THE LIGHT IN</small><h3>빛이 머무는 창</h3><p>얇은 커튼을 통과하는 오후의 햇살. 시간에 따라 달라지는 빛도 공간의 일부가 됩니다.</p></div></div>
+      </div>
+      <div class="room-controls" id="room-controls" inert><button id="replay-home"><span aria-hidden="true">↶</span> 입구에서 다시 보기</button><p>포인트를 눌러 공간을 살펴보세요</p></div>
+      <div class="journey-transport" aria-label="공간 둘러보기 재생 조절"><button class="transport-button" id="tour-play" aria-label="공간 둘러보기 재생"><svg viewBox="0 0 20 20" aria-hidden="true"><path class="play-symbol" d="M5 3v14l12-7Z"/><path class="pause-symbol" d="M4 3h4v14H4zm8 0h4v14h-4z"/></svg></button><div class="transport-track"><label for="tour-progress" id="tour-location">현관 앞</label><input id="tour-progress" type="range" min="0" max="100" step="1" value="0" aria-label="공간 둘러보기 진행 위치" aria-valuetext="현관 앞"></div><span class="transport-count" id="tour-percent" aria-hidden="true">0%</span><button class="transport-button journey-reset" id="tour-reset" aria-label="현관부터 다시 보기">↶</button></div><p class="tour-status" id="tour-status" role="status" aria-live="polite"></p>
+      <div class="hero-bottom"><a class="scroll-hint" href="#about" id="journey-scroll">SCROLL TO STEP INSIDE</a><p class="hero-caption"><strong>Designed for your everyday.</strong><br>ALL INTERIOR · 공간 콘셉트 이미지</p></div><div class="journey-line" aria-hidden="true"></div>
+    </section></div>
+    <form class="container quick-inquiry" id="quick-form" aria-label="빠른 견적 상담 준비">
+      <p class="quick-intro">어떤 공간을<br>바꾸고 싶으세요?</p>
+      <div class="quick-field"><label for="quick-type">01 &nbsp; 공간 유형</label><select id="quick-type" name="type"><option value="주거공간">주거공간</option><option value="상업공간">상업공간</option><option value="기타 공간">기타 공간</option></select></div>
+      <div class="quick-field"><label for="quick-scope">02 &nbsp; 공사 범위</label><select id="quick-scope" name="scope"><option value="전체 리모델링">전체 리모델링</option><option value="주방·욕실">주방·욕실</option><option value="도배·바닥">도배·바닥</option><option value="샷시·필름">샷시·필름</option><option value="타일·조명">타일·조명</option><option value="부분 집수리">부분 집수리</option><option value="상담 후 결정">상담 후 결정</option></select></div>
+      <div class="quick-field"><label for="quick-size">03 &nbsp; 공간 크기</label><select id="quick-size" name="size"><option value="미정">평수 선택</option><option value="10평 미만">10평 미만</option><option value="10–20평">10–20평</option><option value="20–30평">20–30평</option><option value="30–40평">30–40평</option><option value="40평 이상">40평 이상</option></select></div>
+      <button class="quick-submit" type="submit">내 공간 상담하기 <svg class="icon"><use href="#arrow-up-right"/></svg></button>
+    </form>
+    <section class="intro container" id="about" aria-labelledby="about-title">
+      <div class="reveal"><p class="eyebrow">ALL ABOUT YOUR LIFE</p><div class="intro-layout"><h2 class="intro-heading" id="about-title">취향을 담고, 생활을 바꾸다.<br>그 모든 시작에 <span class="italic">all.</span></h2><div class="intro-copy"><p>집마다 다른 생활, 가게마다 다른 꿈.<br>올 인테리어 디자인은 그 차이에서 시작합니다.<br><strong>작은 수선부터 공간 전체의 변화까지,</strong><br>당신에게 꼭 맞는 방법을 함께 찾아갑니다.</p><div class="intro-meta"><span class="busan-tag"><svg class="icon"><use href="#pin"/></svg> 부산 지역 기반 인테리어</span><span>THOUGHTFUL SPACES, BETTER LIVING.</span></div></div></div></div>
+      <div class="trust-row reveal">
+        <div class="trust-item"><svg class="trust-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="m6 19 14-12 14 12M10 17v17h20V17M17 34V23h7v11"/></svg><div><strong>집도, 상업공간도</strong><span>공간에 맞춘 유연한 시공</span></div></div>
+        <div class="trust-item"><svg class="trust-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M7 9h26v23H7zM7 16h26M14 9v7M21 9v7M28 9v7m-15 9 4 4 8-8"/></svg><div><strong>무료 방문 실측·견적</strong><span>공간을 직접 보고 꼼꼼하게</span></div></div>
+        <div class="trust-item"><svg class="trust-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M7 8h26v20H20l-8 6v-6H7zM13 15h14M13 21h9"/></svg><div><strong>익숙한 채널에서 편하게</strong><span>당근 · 인스타그램 · 네이버</span></div></div>
+      </div>
+    </section>
+    <section class="spaces container" id="spaces" aria-labelledby="spaces-title">
+      <div class="section-top reveal"><div><p class="eyebrow">SPACES & POSSIBILITIES</p><h2 class="section-heading" id="spaces-title">당신의 공간이 될 장면들.</h2></div><p class="section-aside">좋아하는 분위기부터 골라보세요.<br>그 안에서 우리만의 방향을 찾습니다.</p></div>
+      <div class="space-grid">
+        <article class="space-card reveal"><div class="image-wrap"><img src="assets/living-room.webp" alt="자연스러운 우드와 크림 컬러를 조합한 따뜻한 주거공간 콘셉트" loading="lazy" width="1536" height="1024"><span class="image-label">RESIDENTIAL</span><button class="image-open" data-preview="living" aria-label="주거공간 콘셉트 이미지 크게 보기"><svg class="icon"><use href="#arrow-up-right"/></svg></button><span class="image-concept">공간 콘셉트</span></div><div class="space-details"><div><h3>가장 나다운 쉼의 공간</h3><p>주거 인테리어 &nbsp; / &nbsp; Natural · Warm · Timeless</p></div><span class="space-number">01 / HOME</span></div></article>
+        <article class="space-card reveal"><div class="image-wrap"><img src="assets/commercial.webp" alt="스톤 카운터와 목재 디테일이 어우러진 감각적인 카페 인테리어 콘셉트" loading="lazy" width="1024" height="1536"><span class="image-label">COMMERCIAL</span><button class="image-open" data-preview="commercial" aria-label="상업공간 콘셉트 이미지 크게 보기"><svg class="icon"><use href="#arrow-up-right"/></svg></button><span class="image-concept">공간 콘셉트</span></div><div class="space-details"><div><h3>다시 찾고 싶은, 그곳</h3><p>상업 인테리어 &nbsp; / &nbsp; Identity · Detail · Experience</p></div><span class="space-number">02 / SHOP</span></div></article>
+      </div>
+      <p class="space-footnote">위 이미지는 스타일 제안을 위해 제작한 콘셉트 이미지이며, 실제 시공 사례가 아닙니다.</p>
+    </section>
+    <section class="services" id="services" aria-labelledby="services-title"><div class="container services-layout">
+      <div class="services-intro reveal"><p class="eyebrow">FROM ONE DETAIL TO ALL</p><h2 id="services-title">작은 디테일부터<br>공간의 모든 것까지.<span class="italic">We do it all.</span></h2><p>모두 바꾸지 않아도 괜찮습니다.<br>지금 필요한 변화부터, 꼼꼼하게 함께합니다.</p></div>
+      <div class="reveal"><div class="service-list">
+        <details class="service-row" open><summary><span class="service-n">01</span><h3>전체 리모델링</h3><span class="plus" aria-hidden="true"></span></summary><p>생활 방식에 맞는 동선부터 마감재와 조명까지.<br>집과 상업공간의 새로운 시작을 함께 계획합니다.</p></details>
+        <details class="service-row"><summary><span class="service-n">02</span><h3>주방 · 욕실</h3><span class="plus" aria-hidden="true"></span></summary><p>매일 쓰는 공간을 더 편리하게. 주방 구성, 수납, 욕실 설비와 타일 등 필요한 공사 범위를 상담합니다.</p></details>
+        <details class="service-row"><summary><span class="service-n">03</span><h3>도배 · 바닥 · 샷시 · 필름</h3><span class="plus" aria-hidden="true"></span></summary><p>벽과 바닥의 질감, 창호의 성능, 필름의 색감. 현재 상태와 예산을 살펴 공간의 분위기를 바꿉니다.</p></details>
+        <details class="service-row"><summary><span class="service-n">04</span><h3>타일 · 조명 · 부분 집수리</h3><span class="plus" aria-hidden="true"></span></summary><p>오래 신경 쓰였던 작은 불편도 이야기해주세요. 현장 상태를 확인하고 필요한 보수와 시공을 안내합니다.</p></details>
+      </div><div class="services-link"><span>무엇부터 해야 할지 고민이라면</span><button data-quote>함께 이야기해요 <svg class="icon"><use href="#arrow-up-right"/></svg></button></div></div>
+    </div></section>
+    <section class="process container" id="process" aria-labelledby="process-title"><div class="section-top reveal"><div><p class="eyebrow">A SIMPLE BEGINNING</p><h2 class="section-heading" id="process-title">막연한 생각이, 구체적인 공간으로.</h2></div><p class="section-aside">처음이라 낯설어도 괜찮아요.<br>한 단계씩, 함께 알아갑니다.</p></div>
+      <div class="process-grid"><article class="process-card reveal"><span class="process-number">01</span><h3>당신의 이야기</h3><p>공간의 크기, 원하는 변화, 생각한 예산.<br>아는 만큼만 편하게 알려주세요.</p><small>YOUR STORY</small></article><article class="process-card reveal"><span class="process-number">02</span><h3>공간과의 만남</h3><p>일정을 맞춰 직접 찾아갑니다.<br>무료 방문 실측으로 현장을 확인합니다.</p><small>ON-SITE MEETING</small></article><article class="process-card reveal"><span class="process-number">03</span><h3>함께 그리는 변화</h3><p>공사 범위와 견적을 충분히 이야기하고,<br>우리 공간에 맞는 계획을 세웁니다.</p><small>PLAN TOGETHER</small></article></div>
+    </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title"><span class="contact-watermark" aria-hidden="true">Hello,</span><div class="container contact-inner"><div><p class="eyebrow">EVERY GREAT SPACE STARTS WITH A CONVERSATION</p><h2 id="contact-title">어떤 공간을 꿈꾸시나요?<br>이제, 함께 이야기해요.</h2><p>부산 전 지역 · 주거 및 상업공간<br>방문 실측과 견적 상담은 무료로 진행합니다.</p></div><div class="contact-actions"><button class="contact-button" data-quote>내 공간 상담하기<svg class="icon"><use href="#arrow-up-right"/></svg></button></div></div></section>
+  </main>
+  <footer class="footer"><div class="container"><div class="footer-top"><a class="brand" href="#" aria-label="올 인테리어 디자인 처음으로"><span class="wordmark">all.</span><span class="brand-description">ALL INTERIOR<br>올 인테리어 디자인</span></a><div class="footer-middle"><span>부산에서 시작되는 공간의 변화</span></div><div class="footer-channels" aria-label="상담 운영 채널"><span>당근</span><span>Instagram</span><span>Naver</span></div></div><div class="footer-bottom"><p>© <span id="year">2026</span> ALL INTERIOR DESIGN. ALL RIGHTS RESERVED.</p><button class="back-top" id="back-top">BACK TO TOP <svg class="icon"><use href="#arrow-up-right"/></svg></button></div></div></footer>
+  <div class="mobile-bottom" id="mobile-bottom"><span>부산 전 지역 · 무료 방문 견적</span><button data-quote>내 공간 상담하기 <svg class="icon"><use href="#arrow-up-right"/></svg></button></div>
+  <dialog id="quote-dialog" aria-labelledby="quote-title"><div class="dialog-content"><div class="dialog-top"><p class="eyebrow">TELL US ABOUT YOUR SPACE</p><button class="dialog-close" data-close aria-label="상담 창 닫기"><svg class="icon"><use href="#close"/></svg></button></div><h2 class="dialog-title" id="quote-title">우리 공간, 여기서부터.</h2><p class="dialog-intro">아는 만큼만 적어주세요. 문의할 내용을 한 번에 정리해드려요.</p>
+    <form id="quote-form"><div class="form-grid">
+      <div class="form-field"><label for="quote-type">공간 유형</label><select id="quote-type" name="type"><option>주거공간</option><option>상업공간</option><option>기타 공간</option></select></div>
+      <div class="form-field"><label for="quote-scope">공사 범위</label><select id="quote-scope" name="scope"><option>전체 리모델링</option><option>주방·욕실</option><option>도배·바닥</option><option>샷시·필름</option><option>타일·조명</option><option>부분 집수리</option><option>상담 후 결정</option></select></div>
+      <div class="form-field"><label for="quote-size">공간 크기</label><select id="quote-size" name="size"><option value="미정">아직 잘 모르겠어요</option><option>10평 미만</option><option>10–20평</option><option>20–30평</option><option>30–40평</option><option>40평 이상</option></select></div>
+      <div class="form-field"><label for="quote-region">지역 <span>선택</span></label><input id="quote-region" name="region" placeholder="예: 부산 수영구 광안동" maxlength="80" autocomplete="address-level2"></div>
+      <div class="form-field"><label for="quote-budget">생각 중인 예산</label><select id="quote-budget" name="budget"><option>상담 후 결정</option><option>500만 원 미만</option><option>500–1,000만 원</option><option>1,000–3,000만 원</option><option>3,000–5,000만 원</option><option>5,000만 원 이상</option></select></div>
+      <div class="form-field"><label for="quote-date">희망 시기</label><select id="quote-date" name="timing"><option>일정 협의</option><option>가능한 빠르게</option><option>1개월 이내</option><option>1–3개월 이내</option><option>3개월 이후</option></select></div>
+      <div class="form-field wide"><label for="quote-notes">바꾸고 싶은 모습 <span>선택</span></label><textarea id="quote-notes" name="notes" maxlength="2000" placeholder="불편했던 점, 좋아하는 분위기, 궁금한 점을 편하게 적어주세요."></textarea></div>
+      <div class="form-field wide"><label for="quote-photos">공간 사진 <span>선택 · 최대 5장</span></label><input id="quote-photos" type="file" accept="image/jpeg,image/png,image/webp" multiple aria-describedby="photo-help photo-status"><p class="form-help" id="photo-help">JPG, PNG, WebP · 장당 10MB까지. 사진은 이 화면에서만 미리 보며 전송되지 않습니다.</p><div class="file-previews" id="file-previews"></div><p class="form-help" id="photo-status" role="status"></p></div>
+    </div><div class="form-actions"><button class="primary-btn" type="submit">상담 내용 정리하기 <svg class="icon"><use href="#arrow-right"/></svg></button></div><p class="form-help" style="margin-top:12px">작성한 내용은 자동 접수되지 않습니다. 정리된 내용을 복사해 이용 중인 상담 채널에 전달해주세요.</p></form>
+    <div id="quote-result" hidden><p class="success-label">✓ &nbsp; 상담할 내용이 준비됐어요</p><div class="summary-body" id="quote-summary"></div><p class="summary-notice">아래 내용을 복사해 올 인테리어 디자인의 당근·인스타그램·네이버 상담 채널에 보내주세요. 선택한 사진은 해당 채널에서 별도로 첨부해주세요.</p><div class="form-actions"><button class="secondary-btn" id="quote-edit">수정하기</button><button class="secondary-btn" id="quote-download">텍스트 저장</button><button class="primary-btn" id="quote-copy">내용 복사 <svg class="icon"><use href="#arrow-right"/></svg></button></div><p class="status-message" id="copy-status" role="status" aria-live="polite"></p></div>
+  </div></dialog>
+  <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title"><div class="dialog-content"><div class="dialog-top"><p class="eyebrow" id="preview-title">SPACE CONCEPT</p><button class="dialog-close" data-close aria-label="이미지 닫기"><svg class="icon"><use href="#close"/></svg></button></div><img class="preview-image" id="preview-image" alt=""><p class="preview-caption" id="preview-caption"></p></div></dialog>
+  <script>
+    (() => {
+      'use strict';
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const header = $('#header');
+      const nav = $('#nav');
+      const menuToggle = $('#menu-toggle');
+      const mobileBottom = $('#mobile-bottom');
+      const walkthrough = $('#walkthrough');
+      const homeScene = $('#home-scene');
+      let journey = 0;
+      let wasInside = false;
+      let journeyAnimation = 0;
+      let journeyVelocity = 0;
+      let isTravelling = false;
+      let view3D = null;
+      let drag = null;
+      let suppressSceneClick = false;
+      const tourProgress = $('#tour-progress');
+      const tourPlay = $('#tour-play');
+      const journeyDistance = () => Math.max(1, walkthrough.offsetHeight - homeScene.offsetHeight);
+      const setPlaying = playing => { isTravelling = playing; tourPlay.classList.toggle('is-playing', playing); tourPlay.setAttribute('aria-label', playing ? '공간 둘러보기 일시 정지' : '공간 둘러보기 재생'); };
+      const stopTravel = () => { cancelAnimationFrame(journeyAnimation); journeyAnimation = 0; setPlaying(false); };
+      const setJourney = p => window.scrollTo({ top: walkthrough.offsetTop + Math.max(0, Math.min(1, p))*journeyDistance(), behavior: 'instant' });
+      const updateJourney = () => {
+        journey = Math.max(0, Math.min(1, (window.scrollY - walkthrough.offsetTop) / journeyDistance()));
+        homeScene.style.setProperty('--journey', journey.toFixed(4));
+        const inside = journey > .94;
+        homeScene.classList.toggle('is-inside', inside);
+        $('#room-hotspots').inert = !inside; $('#room-controls').inert = !inside;
+        $('.hero-content', homeScene).inert = journey > .39;
+        $('#room-message').setAttribute('aria-hidden', String(!inside));
+        mobileBottom.classList.toggle('past-home', window.scrollY > walkthrough.offsetHeight - 120);
+        const location = journey < .06 ? '현관 앞' : journey < .46 ? '문이 열립니다' : journey < .94 ? '집 안으로' : '거실에 도착했어요';
+        tourProgress.value = String(Math.round(journey*100)); tourProgress.setAttribute('aria-valuetext', location); $('#tour-location').textContent = location; $('#tour-percent').textContent = `${Math.round(journey*100)}%`;
+        view3D?.setProgress(journey);
+        if (wasInside !== inside) { $('#journey-scroll').textContent = inside ? 'SCROLL TO EXPLORE MORE' : 'SCROLL TO STEP INSIDE'; $('#tour-status').textContent = inside ? '거실에 도착했습니다. 포인트를 눌러 공간을 살펴보세요.' : ''; wasInside = inside; }
+      };
+      let scrollPending = false;
+      const updateScroll = () => { header.classList.toggle('is-fixed', window.scrollY > 110); mobileBottom.classList.toggle('shown', window.scrollY > 620); updateJourney(); scrollPending = false; };
+      window.addEventListener('scroll', () => { if (!scrollPending) { scrollPending = true; requestAnimationFrame(updateScroll); } }, { passive: true });
+      updateScroll();
+      window.addEventListener('resize', () => { stopTravel(); updateScroll(); }, { passive: true });
+      const travelTo = (target, releaseVelocity) => {
+        const inheritedVelocity = isTravelling ? journeyVelocity : 0;
+        stopTravel();
+        if (reducedMotion.matches) { setJourney(target); updateScroll(); return; }
+        let position = journey; journeyVelocity = releaseVelocity ?? inheritedVelocity; let previousTime = performance.now();
+        setPlaying(true);
+        const move = now => {
+          const dt = Math.min(.032, Math.max(.001, (now-previousTime)/1000)); previousTime = now;
+          const omega = 3.7; journeyVelocity += (omega*omega*(target-position)-2*omega*journeyVelocity)*dt; position += journeyVelocity*dt;
+          if (position < 0 || position > 1) { position = Math.max(0,Math.min(1,position)); journeyVelocity = 0; }
+          setJourney(position); updateScroll();
+          if (Math.abs(target-position) < .001 && Math.abs(journeyVelocity) < .003) { setJourney(target); updateScroll(); stopTravel(); journeyVelocity = 0; return; }
+          journeyAnimation = requestAnimationFrame(move);
+        };
+        journeyAnimation = requestAnimationFrame(move);
+      };
+      $('#enter-home').addEventListener('click', e => { e.preventDefault(); tourPlay.focus({ preventScroll:true }); travelTo(1); });
+      $('#replay-home').addEventListener('click', () => { tourPlay.focus({ preventScroll:true }); travelTo(0); });
+      $('#tour-reset').addEventListener('click', () => travelTo(0));
+      tourPlay.addEventListener('click', () => { if (isTravelling) stopTravel(); else travelTo(journey > .995 ? 0 : 1); });
+      tourProgress.addEventListener('input', () => { stopTravel(); setJourney(Number(tourProgress.value)/100); updateScroll(); });
+      window.addEventListener('wheel', stopTravel, { passive: true });
+      window.addEventListener('pointerdown', e => { if (!e.target.closest('.journey-transport')) stopTravel(); }, { passive:true });
+      document.querySelectorAll('a[href^="#"]').forEach(link => { if (link.id !== 'enter-home') link.addEventListener('click',stopTravel); });
+      window.addEventListener('touchstart', e => { if (!e.target.closest('.journey-transport')) stopTravel(); }, { passive: true });
+      window.addEventListener('keydown', e => { if (e.target.matches('input,textarea,select')) return; if (['ArrowDown','ArrowUp','PageDown','PageUp','Home','End','Escape'].includes(e.key)) stopTravel(); });
+      document.addEventListener('visibilitychange', () => { if (document.hidden) stopTravel(); });
+      reducedMotion.addEventListener('change', () => { stopTravel(); view3D?.resetLook(); updateScroll(); });
+      homeScene.addEventListener('pointerdown', e => {
+        if (!view3D || reducedMotion.matches || !e.isPrimary || e.button !== 0 || e.target.closest('a,button,input,select,textarea,.hotspot-panel')) return;
+        stopTravel(); view3D.resetLook();
+        drag = { id:e.pointerId, startX:e.clientX, startY:e.clientY, start:journey, previous:journey, time:performance.now(), velocity:0, active:false };
+      });
+      homeScene.addEventListener('pointermove', e => {
+        if (!drag || drag.id !== e.pointerId) return;
+        const dx = drag.startX-e.clientX; const dy = drag.startY-e.clientY;
+        if (!drag.active && Math.abs(dy)>Math.abs(dx) && Math.abs(dy)>9) { drag = null; return; }
+        if (!drag.active && Math.abs(dx)<8) return;
+        if (!drag.active) { drag.active = true; homeScene.setPointerCapture(e.pointerId); homeScene.classList.add('is-dragging'); }
+        const p = Math.max(0, Math.min(1, drag.start + dx/Math.min(homeScene.clientWidth*.65,520)));
+        const now = performance.now(); const speed = (p-drag.previous)/Math.max(.008,(now-drag.time)/1000);
+        drag.velocity = drag.velocity*.45 + speed*.55; drag.previous = p; drag.time = now; setJourney(p); updateScroll();
+      });
+      const endDrag = (e, cancelled = false) => {
+        if (!drag || drag.id !== e.pointerId) return;
+        const current = drag; drag = null; homeScene.classList.remove('is-dragging');
+        if (homeScene.hasPointerCapture(e.pointerId)) homeScene.releasePointerCapture(e.pointerId);
+        if (current.active) { suppressSceneClick = true; setTimeout(() => suppressSceneClick = false, 0); if (!cancelled) { const velocity = performance.now()-current.time > 130 ? 0 : Math.max(-1.5,Math.min(1.5,current.velocity)); const projected = journey + velocity*.22; travelTo(projected>.4 ? 1 : 0,velocity); } }
+      };
+      homeScene.addEventListener('pointerup', e => endDrag(e)); homeScene.addEventListener('pointercancel', e => endDrag(e,true)); homeScene.addEventListener('lostpointercapture', e => endDrag(e,true));
+      homeScene.addEventListener('click', e => { if (suppressSceneClick) { e.preventDefault(); e.stopImmediatePropagation(); } }, true);
+      window.allHomeTour = { attach(renderer) { view3D = renderer; renderer.setProgress(journey); }, detach() { view3D = null; }, getProgress: () => journey, isDragging: () => Boolean(drag?.active), stop: stopTravel, play: travelTo };
+      if (window.matchMedia('(pointer: fine)').matches && !reducedMotion.matches) {
+        homeScene.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse' || journey < .7 || view3D || reducedMotion.matches) return; const r = homeScene.getBoundingClientRect(); homeScene.style.setProperty('--look-x', `${((e.clientX-r.left)/r.width-.5)*-17}px`); homeScene.style.setProperty('--look-y', `${((e.clientY-r.top)/r.height-.5)*-11}px`); });
+        homeScene.addEventListener('pointerleave', () => { homeScene.style.setProperty('--look-x', '0px'); homeScene.style.setProperty('--look-y', '0px'); });
+      }
+      const closeDetails = () => { $$('.hotspot-toggle').forEach(btn => btn.setAttribute('aria-expanded', 'false')); $$('.hotspot-panel').forEach(panel => panel.hidden = true); };
+      $$('.hotspot-toggle').forEach(btn => btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded') !== 'true'; closeDetails(); btn.setAttribute('aria-expanded', String(open)); document.getElementById(btn.getAttribute('aria-controls')).hidden = !open; }));
+      homeScene.addEventListener('click', e => { if (!e.target.closest('.room-hotspot')) closeDetails(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetails(); });
+      const closeMenu = () => { nav.classList.remove('is-open'); menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', '메뉴 열기'); };
+      menuToggle.addEventListener('click', () => { const open = !nav.classList.contains('is-open'); nav.classList.toggle('is-open', open); menuToggle.setAttribute('aria-expanded', String(open)); menuToggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기'); });
+      $$('#nav a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+      document.addEventListener('click', e => { if (!header.contains(e.target)) closeMenu(); });
+      window.matchMedia('(min-width: 561px)').addEventListener('change', closeMenu);
+      $('#back-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth' }));
+      $('#year').textContent = new Date().getFullYear();
+      if ('IntersectionObserver' in window && !reducedMotion.matches) {
+        const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: .09 });
+        $$('.reveal').forEach(el => observer.observe(el));
+        document.documentElement.classList.add('js-motion');
+      }
+      let lastFocus = null;
+      const showDialog = dialog => { stopTravel(); lastFocus = document.activeElement; closeMenu(); dialog.showModal(); document.body.classList.add('modal-open'); dialog.scrollTop = 0; };
+      $$('dialog').forEach(dialog => {
+        $('[data-close]', dialog).addEventListener('click', () => dialog.close());
+        let backdropPress = false;
+        dialog.addEventListener('pointerdown', e => { const r = dialog.getBoundingClientRect(); backdropPress = e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; });
+        dialog.addEventListener('click', e => { const r = dialog.getBoundingClientRect(); if (backdropPress && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) dialog.close(); backdropPress = false; });
+        dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); if (lastFocus?.isConnected) lastFocus.focus({ preventScroll: true }); });
+      });
+      const quoteDialog = $('#quote-dialog');
+      const quoteForm = $('#quote-form');
+      const quoteResult = $('#quote-result');
+      const openQuote = fromQuick => {
+        if (fromQuick) ['type', 'scope', 'size'].forEach(key => { $(`#quote-${key}`).value = $(`#quick-${key}`).value; });
+        quoteForm.hidden = false; quoteResult.hidden = true; $('#quote-title').textContent = '우리 공간, 여기서부터.'; $('#copy-status').textContent = ''; showDialog(quoteDialog);
+      };
+      $$('[data-quote]').forEach(btn => btn.addEventListener('click', () => openQuote(false)));
+      $('#quick-form').addEventListener('submit', e => { e.preventDefault(); openQuote(true); });
+      const previewInfo = {
+        living: { src: 'assets/living-room.webp', title: '가장 나다운 쉼의 공간', alt: '따뜻한 우드와 스톤, 부드러운 패브릭이 어우러진 주거공간 콘셉트' },
+        commercial: { src: 'assets/commercial.webp', title: '다시 찾고 싶은, 그곳', alt: '자연광과 스톤, 목재가 어우러진 카페 인테리어 콘셉트' }
+      };
+      $$('[data-preview]').forEach(btn => btn.addEventListener('click', () => {
+        const info = previewInfo[btn.dataset.preview]; $('#preview-image').src = info.src; $('#preview-image').alt = info.alt; $('#preview-caption').textContent = info.title;
+        const note = document.createElement('small'); note.textContent = '스타일 제안을 위한 콘셉트 이미지 · 실제 시공 사례가 아닙니다.'; $('#preview-caption').append(note); showDialog($('#preview-dialog'));
+      }));
+      let photos = [];
+      const renderPhotos = () => {
+        const preview = $('#file-previews'); preview.replaceChildren();
+        photos.forEach((item, index) => { const wrap = document.createElement('div'); wrap.className = 'file-preview'; const img = document.createElement('img'); img.src = item.url; img.alt = item.file.name; const remove = document.createElement('button'); remove.type = 'button'; remove.textContent = '×'; remove.setAttribute('aria-label', `${item.file.name} 사진 제거`); remove.addEventListener('click', () => { URL.revokeObjectURL(item.url); photos.splice(index, 1); renderPhotos(); $('#photo-status').textContent = `${photos.length}장 선택됨`; }); wrap.append(img, remove); preview.append(wrap); });
+      };
+      $('#quote-photos').addEventListener('change', e => {
+        const issues = []; const accepted = ['image/jpeg', 'image/png', 'image/webp'];
+        for (const file of e.target.files) {
+          if (!accepted.includes(file.type)) { issues.push('JPG, PNG, WebP 사진만 선택할 수 있어요.'); continue; }
+          if (file.size > 10 * 1024 * 1024) { issues.push('장당 10MB 이하의 사진을 선택해주세요.'); continue; }
+          if (photos.some(item => item.file.name === file.name && item.file.size === file.size && item.file.lastModified === file.lastModified)) continue;
+          if (photos.length >= 5) { issues.push('사진은 최대 5장까지 선택할 수 있어요.'); break; }
+          photos.push({ file, url: URL.createObjectURL(file) });
+        }
+        renderPhotos(); $('#photo-status').textContent = [...new Set(issues), `${photos.length}장 선택됨`].join(' '); e.target.value = '';
+      });
+      let summary = '';
+      quoteForm.addEventListener('submit', e => {
+        e.preventDefault(); const data = new FormData(quoteForm);
+        summary = ['[올 인테리어 디자인 · 견적 상담]', '', `공간 유형: ${data.get('type')}`, `공사 범위: ${data.get('scope')}`, `공간 크기: ${data.get('size')}`, `지역: ${String(data.get('region')).trim() || '상담 시 안내'}`, `예산: ${data.get('budget')}`, `희망 시기: ${data.get('timing')}`, '', '바꾸고 싶은 모습 / 문의사항', String(data.get('notes')).trim() || '상담하며 함께 정하고 싶어요.', '', photos.length ? `공간 사진: ${photos.length}장 별도 첨부 예정` : '공간 사진: 상담 시 전달 가능', '', '무료 방문 실측 및 견적 상담을 문의드립니다.'].join('\n');
+        $('#quote-summary').textContent = summary; quoteForm.hidden = true; quoteResult.hidden = false; $('#quote-title').textContent = '이제, 이야기를 건네보세요.'; $('#copy-status').textContent = ''; quoteDialog.scrollTop = 0; $('#quote-copy').focus({ preventScroll: true });
+      });
+      $('#quote-edit').addEventListener('click', () => { quoteForm.hidden = false; quoteResult.hidden = true; $('#quote-title').textContent = '우리 공간, 여기서부터.'; quoteDialog.scrollTop = 0; $('#quote-type').focus({ preventScroll: true }); });
+      $('#quote-copy').addEventListener('click', async () => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(summary);
+          else { const field = document.createElement('textarea'); field.value = summary; field.style.cssText = 'position:fixed;left:-9999px;top:0'; quoteDialog.append(field); field.select(); const copied = document.execCommand('copy'); field.remove(); if (!copied) throw new Error('copy_failed'); }
+          $('#copy-status').textContent = '복사했어요. 이용 중인 상담 채널에 붙여넣어주세요.';
+        } catch { const range = document.createRange(); range.selectNodeContents($('#quote-summary')); const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range); $('#copy-status').textContent = '자동 복사가 어려워 내용을 선택했어요. 직접 복사하거나 텍스트로 저장해주세요.'; }
+      });
+      $('#quote-download').addEventListener('click', () => { const blob = new Blob(['\uFEFF' + summary], { type: 'text/plain;charset=utf-8' }); const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = '올인테리어_상담내용.txt'; document.body.append(link); link.click(); link.remove(); window.setTimeout(() => URL.revokeObjectURL(url), 1500); $('#copy-status').textContent = '상담 내용을 텍스트 파일로 저장했어요.'; });
+    })();
+  </script>
+  <script type="module">
+    // All scene geometry is rendered in WebGL. The photo scene remains a usable fallback.
+    (async () => {
+      const host = document.getElementById('three-stage');
+      const hero = document.getElementById('home-scene');
+      const motion = matchMedia('(prefers-reduced-motion: reduce)');
+      let renderer, frame = 0, disposed = false, visible = true, needsFrame = true;
+      const fallback = () => {
+        disposed = true; cancelAnimationFrame(frame); document.documentElement.classList.remove('webgl-ready');
+        window.allHomeTour?.detach();
+        const action = document.getElementById('enter-home');
+        action.firstChild.textContent = '공간 살펴보기 ';
+        document.querySelector('.entrance-small').textContent = '아래로 스크롤하며 공간을 둘러보세요';
+        document.querySelector('.hero-caption').innerHTML = '<strong>Designed for your everyday.</strong><br>ALL INTERIOR · 공간 콘셉트 이미지';
+        host.replaceChildren(); try { renderer?.dispose(); } catch {}
+      };
+      try {
+        const [THREE, { RoomEnvironment }, { RoundedBoxGeometry }] = await Promise.all([
+          import('three'), import('./assets/vendor/RoomEnvironment.js'), import('./assets/vendor/RoundedBoxGeometry.js')
+        ]);
+        if (!window.allHomeTour) return;
+        renderer = new THREE.WebGLRenderer({ antialias:true, alpha:false, powerPreference:'high-performance' });
+        renderer.setPixelRatio(Math.min(devicePixelRatio, innerWidth < 600 ? 1.5 : 1.75));
+        renderer.setSize(hero.clientWidth,hero.clientHeight);
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.16;
+        renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.domElement.setAttribute('aria-hidden','true'); renderer.domElement.tabIndex = -1;
+        host.append(renderer.domElement);
+        const scene = new THREE.Scene(); scene.background = new THREE.Color('#b8b8a9');
+        const camera = new THREE.PerspectiveCamera(49,hero.clientWidth/hero.clientHeight,.045,65);
+        const environment = new RoomEnvironment(); const pmrem = new THREE.PMREMGenerator(renderer);
+        const environmentTarget = pmrem.fromScene(environment,.05); scene.environment = environmentTarget.texture; scene.environmentIntensity = .5;
+        environment.dispose(); pmrem.dispose();
+        const clamp = (value,a=0,b=1) => Math.max(a,Math.min(b,value));
+        const ease = (a,b,p) => { const t=clamp((p-a)/(b-a)); return t*t*(3-2*t); };
+        const material = (color,roughness=.65,metalness=0) => new THREE.MeshStandardMaterial({color,roughness,metalness});
+        const palette = {
+          wall:material('#cbc5b7',.94), ceiling:material('#d1c7b7',.97), edge:material('#2b2924',.56),
+          oak:material('#77573a',.48), darkOak:material('#4a3425',.5), floor:material('#aa8963',.69),
+          stone:material('#c9ba9e',.64), tile:material('#746f64',.83), fabric:material('#e5ddca',.98),
+          pillow:material('#b9ab91',.95), bronze:material('#aa8760',.3,.76), dark:material('#282823',.48,.22),
+          rug:material('#c9c0ab',1), green:material('#6a7650',.88), ceramic:material('#aa9b80',.43)
+        };
+        let seed = 193;
+        const random = () => { seed = (Math.imul(1664525,seed)+1013904223)>>>0; return seed/4294967296; };
+        const surface = (kind) => {
+          const width=256,height=512,pixels=new Uint8Array(width*height*4);
+          for(let y=0;y<height;y++) for(let x=0;x<width;x++) {
+            const noise=random(); let value;
+            if(kind==='wood') { const wave=x + 2.5*Math.sin(y*.016) + Math.sin(y*.055+x*.014); value=190+17*Math.sin(wave*.42)+10*Math.sin(wave*1.6)+noise*16; }
+            else if(kind==='fabric') value=213+(x%2?6:-6)+(y%2?4:-4)+noise*16;
+            else value=220+noise*26+4*Math.sin(x*.04+y*.03);
+            const i=(y*width+x)*4; pixels[i]=pixels[i+1]=pixels[i+2]=clamp(value,0,255); pixels[i+3]=255;
+          }
+          const texture=new THREE.DataTexture(pixels,width,height,THREE.RGBAFormat); texture.colorSpace=THREE.SRGBColorSpace; texture.wrapS=texture.wrapT=THREE.RepeatWrapping; texture.magFilter=THREE.LinearFilter; texture.minFilter=THREE.LinearMipmapLinearFilter; texture.generateMipmaps=true; texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy()); texture.needsUpdate=true; return texture;
+        };
+        const woodMap=surface('wood'), fabricMap=surface('fabric'), stoneMap=surface('stone');
+        ['oak','darkOak','floor'].forEach(key=>palette[key].map=woodMap);
+        ['wall','ceiling','stone','tile','ceramic'].forEach(key=>palette[key].map=stoneMap);
+        ['fabric','pillow','rug'].forEach(key=>palette[key].map=fabricMap);
+        const boxGeometry = new THREE.BoxGeometry(1,1,1);
+        const box = (w,h,d,x,y,z,mat,parent=scene) => { const mesh=new THREE.Mesh(boxGeometry,mat); mesh.scale.set(w,h,d); mesh.position.set(x,y,z); mesh.castShadow=true; mesh.receiveShadow=true; parent.add(mesh); return mesh; };
+        const rounded = (w,h,d,r,x,y,z,mat,parent=scene) => { const mesh=new THREE.Mesh(new RoundedBoxGeometry(w,h,d,3,r),mat); mesh.position.set(x,y,z); mesh.castShadow=true; mesh.receiveShadow=true; parent.add(mesh); return mesh; };
+        const cylinder = (rt,rb,h,x,y,z,mat,parent=scene) => { const mesh=new THREE.Mesh(new THREE.CylinderGeometry(rt,rb,h,40),mat); mesh.position.set(x,y,z); mesh.castShadow=true; mesh.receiveShadow=true; parent.add(mesh); return mesh; };
+        const sphereGeometry=new THREE.SphereGeometry(1,20,14);
+        const ellipsoid=(x,y,z,sx,sy,sz,mat,parent=scene)=>{const mesh=new THREE.Mesh(sphereGeometry,mat);mesh.position.set(x,y,z);mesh.scale.set(sx,sy,sz);mesh.castShadow=true;mesh.receiveShadow=true;parent.add(mesh);return mesh;};
+        const glow = new THREE.MeshBasicMaterial({color:'#ffe7b6'});
+        // Entry architecture; the clear opening is x [-1.03, 1.03], y [0, 2.94].
+        box(3.65,3.5,.32,-2.885,1.75,2.2,palette.wall);
+        box(3.65,3.5,.32,2.885,1.75,2.2,palette.wall);
+        box(2.12,.56,.32,0,3.22,2.2,palette.wall);
+        box(.075,2.99,.39,-1.045,1.495,2.21,palette.edge);
+        box(.075,2.99,.39,1.045,1.495,2.21,palette.edge);
+        box(2.16,.075,.39,0,2.985,2.21,palette.edge);
+        box(2.03,.045,.4,0,.0225,2.21,palette.stone);
+        box(.013,2.82,.013,1.087,1.48,2.39,glow);
+        box(2.15,.012,.013,0,3.07,2.39,glow);
+        // A solid leaf, thickness and hinge are all real geometry, opening into the room.
+        const hinge=new THREE.Group(); hinge.position.set(-1.005,.04,2.2); scene.add(hinge);
+        const door=box(2.01,2.875,.095,1.005,1.4375,0,palette.darkOak,hinge);
+        for(let i=1;i<8;i++) box(.008,2.83,.006,i*.251,1.4375,.052,palette.edge,hinge);
+        box(.022,2.73,.018,.11,1.44,.057,palette.oak,hinge);
+        const handleMountA=cylinder(.031,.031,.095,1.78,1.10,.113,palette.bronze,hinge); handleMountA.rotation.x=Math.PI/2;
+        const handleMountB=cylinder(.031,.031,.095,1.78,1.68,.113,palette.bronze,hinge); handleMountB.rotation.x=Math.PI/2;
+        cylinder(.023,.023,.67,1.78,1.39,.165,palette.bronze,hinge);
+        const lock=rounded(.13,.28,.028,.018,1.75,1.97,.065,palette.dark,hinge);
+        box(.033,.008,.008,1.75,2.02,.083,glow,hinge);
+        for(const y of [.34,1.47,2.54]) cylinder(.023,.023,.12,0,y,0,palette.bronze,hinge);
+        // Quiet hallway: large stone tiles, warm sconces and ceiling reveals.
+        box(9.4,.12,7.8,0,-.07,6,palette.tile);
+        for(let x=-4.7;x<=4.7;x+=1.57) box(.007,.005,7.8,x,.003,6,palette.edge);
+        for(let z=2.2;z<10;z+=1.56) box(9.4,.005,.007,0,.003,z,palette.edge);
+        box(.2,3.5,7.8,-4.8,1.75,6,palette.wall); box(.2,3.5,7.8,4.8,1.75,6,palette.wall);
+        box(9.6,.12,7.8,0,3.56,6,palette.ceiling);
+        for(const x of [-2.3,2.3]) { cylinder(.07,.07,.55,x,1.92,2.42,palette.bronze); ellipsoid(x,2.25,2.43,.077,.07,.077,glow); ellipsoid(x,1.6,2.43,.077,.07,.077,glow); const light=new THREE.PointLight('#ffe0a3',5,3,2); light.position.set(x,2.23,2.62); scene.add(light); }
+        // The room continues behind the doorway. Camera ends inside, in front of the seating area.
+        box(9.5,.12,10.4,0,-.06,-3,palette.floor);
+        const plankGeometry=new THREE.BoxGeometry(.586,.016,1.74); const planks=new THREE.InstancedMesh(plankGeometry,palette.floor,96);
+        const dummy=new THREE.Object3D(); const tint=new THREE.Color(); let plankIndex=0;
+        for(let x=0;x<16;x++) for(let z=0;z<6;z++) { dummy.position.set(-4.48+x*.595,.011,1.30-z*1.75); dummy.updateMatrix(); planks.setMatrixAt(plankIndex,dummy.matrix); tint.setRGB(.91+random()*.09,.91+random()*.09,.91+random()*.09); planks.setColorAt(plankIndex++,tint); }
+        planks.receiveShadow=true; scene.add(planks);
+        box(.18,3.5,10.4,-4.8,1.75,-3,palette.oak);
+        box(9.6,3.5,.18,0,1.75,-8.2,palette.wall);
+        box(9.6,.13,10.4,0,3.55,-3,palette.ceiling);
+        for(let z=-7.8;z<2.2;z+=.8) box(.02,3.42,.014,-4.69,1.73,z,palette.darkOak);
+        box(9.4,.07,.04,0,3.4,-8.04,glow);
+        box(.04,.07,9.6,-4.63,3.4,-3,glow);
+        box(9.4,.09,.045,0,.075,-8.06,palette.oak);
+        // Floor-to-ceiling window bays, with a luminous sky beyond the real mullions.
+        const sky=new THREE.ShaderMaterial({side:THREE.DoubleSide,vertexShader:'varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',fragmentShader:'varying vec2 vUv; void main(){vec3 low=vec3(.54,.61,.48);vec3 high=vec3(.82,.88,.91);vec3 c=mix(low,high,smoothstep(.0,.6,vUv.y));gl_FragColor=vec4(c,1.0);}' });
+        const outside=new THREE.Mesh(new THREE.PlaneGeometry(12,6),sky); outside.rotation.y=-Math.PI/2; outside.position.set(5.15,2,-3); scene.add(outside);
+        for(const z of [1.85,-.55,-2.95,-5.35,-7.8]) box(.09,3.5,.065,4.67,1.75,z,palette.dark);
+        box(.1,.08,10.2,4.67,.05,-3,palette.dark); box(.1,.1,10.2,4.67,3.42,-3,palette.dark);
+        const curtainMat=new THREE.MeshStandardMaterial({color:'#f5edda',roughness:1,transparent:true,opacity:.41,side:THREE.DoubleSide,depthWrite:false});
+        for(const edge of [1.3,-7.5]) for(let i=0;i<8;i++) { const curtain=box(.075,3.26,.13,4.45,1.73,edge+i*.11,curtainMat);curtain.castShadow=false; }
+        // Softly rounded linen seating, with cushions and a chaise.
+        rounded(4.12,.27,1.15,.095,.25,.30,-6.5,palette.fabric);
+        rounded(4.08,.69,.26,.10,.25,.78,-7.00,palette.fabric);
+        for(let i=0;i<3;i++) { rounded(1.20,.24,.94,.085,-1.05+i*1.29,.52,-6.43,palette.fabric); const cushion=rounded(1.14,.58,.23,.1,-1.05+i*1.29,.90,-6.79,palette.fabric); cushion.rotation.x=-.12; }
+        rounded(.29,.63,1.17,.1,-1.92,.57,-6.50,palette.fabric);
+        rounded(1.28,.30,2.42,.10,2.08,.33,-5.92,palette.fabric);
+        rounded(1.24,.22,1.54,.09,2.08,.58,-5.56,palette.fabric);
+        rounded(.26,.61,2.42,.095,2.81,.60,-5.92,palette.fabric);
+        const pillowA=rounded(.6,.55,.2,.13,-1.28,.97,-6.53,palette.pillow); pillowA.rotation.z=.23;pillowA.rotation.x=-.16;
+        const pillowB=rounded(.56,.52,.22,.12,2.22,.99,-6.56,palette.darkOak);pillowB.rotation.z=-.25;pillowB.rotation.x=-.15;
+        for(const x of [-1.7,1.8,2.58]) cylinder(.035,.035,.15,x,.105,-6.8,palette.dark);
+        rounded(5.7,.028,3.95,.12,.25,.041,-5.01,palette.rug);
+        // Sculptural travertine coffee table and ceramic objects at different depths.
+        const tableTop=cylinder(.88,.88,.115,.1,.55,-4.72,palette.stone); tableTop.scale.set(1.42,1,.80);
+        cylinder(.24,.31,.42,-.50,.29,-4.72,palette.stone); cylinder(.24,.31,.42,.68,.29,-4.72,palette.stone);
+        const dish=cylinder(.22,.18,.055,-.43,.642,-4.50,palette.dark);
+        const vase=cylinder(.07,.11,.30,.5,.765,-4.70,palette.ceramic);
+        cylinder(.14,.16,.055,.21,.64,-4.98,palette.oak);
+        const stemMat=material('#5b5740',.85);
+        const branch=new THREE.Mesh(new THREE.CylinderGeometry(.005,.007,.6,8),stemMat);branch.position.set(.5,1.2,-4.7);branch.rotation.z=.22;scene.add(branch);
+        for(let i=0;i<5;i++) { const leaf=ellipsoid(.44+i*.028,1.01+i*.085,-4.7,.09,.018,.038,palette.green);leaf.rotation.z=(i%2?-.4:.5); }
+        // A slim dark shelf and a few quiet objects make the back wall dimensional.
+        box(1.25,2.95,.45,-3.55,1.52,-7.78,palette.darkOak);
+        for(let i=0;i<4;i++) { box(1.28,.06,.59,-3.55,.4+i*.71,-7.48,palette.oak); for(let j=0;j<3;j++) { const bookMat=material(['#a3977b','#c9c1b0','#6c725e'][j],.85); box(.08,.29+j*.025,.21,-3.86+j*.11,.58+i*.71,-7.37,bookMat); } }
+        cylinder(.11,.08,.32,-3.24,2.00,-7.37,palette.ceramic);
+        box(3.9,2.84,.035,.18,1.69,-8.08,palette.stone);
+        // Low console on the left; black plinth and brass highlights.
+        rounded(.62,.55,3.1,.025,-4.23,.39,-3.88,palette.darkOak);
+        box(.67,.045,3.18,-4.2,.685,-3.88,palette.stone);
+        for(const z of [-4.85,-3.8,-2.8]) box(.014,.45,.02,-3.90,.42,z,palette.bronze);
+        cylinder(.19,.15,.31,-4.14,.86,-4.85,palette.ceramic);
+        // A compact olive tree beside the window; foliage is real lit geometry.
+        cylinder(.28,.22,.52,3.58,.30,-7.13,palette.ceramic);
+        cylinder(.025,.035,1.6,3.58,1.21,-7.13,palette.oak);
+        for(let i=0;i<12;i++) { const angle=i*2.399; const radius=.20+(i%3)*.12; const leafMat=i%2?palette.green:material('#82906a',.9); ellipsoid(3.58+Math.cos(angle)*radius,1.62+(i%4)*.22,-7.13+Math.sin(angle)*radius,.33,.24,.22,leafMat); }
+        // Pendant and floor lamp: bright surfaces plus warm local illumination.
+        cylinder(.012,.012,.78,.6,3.12,-4.67,palette.dark);
+        const pendant=new THREE.Mesh(new THREE.SphereGeometry(.28,32,24),new THREE.MeshStandardMaterial({color:'#fff3dc',emissive:'#ffe0a5',emissiveIntensity:.4,roughness:.35}));pendant.position.set(.6,2.57,-4.67);scene.add(pendant);
+        const pendantLight=new THREE.PointLight('#ffddb0',8,7,2);pendantLight.position.copy(pendant.position);scene.add(pendantLight);
+        cylinder(.19,.19,.04,3.65,.07,-5.73,palette.dark); cylinder(.012,.012,1.87,3.65,1.01,-5.73,palette.dark);
+        const lampArm=box(.42,.023,.023,3.45,1.95,-5.73,palette.dark); const lampShade=cylinder(.19,.10,.08,3.24,1.90,-5.73,palette.dark);
+        const ambient=new THREE.HemisphereLight('#f1f4e8','#65503a',1.5);scene.add(ambient);
+        const daylight=new THREE.DirectionalLight('#fff0d1',3.15);daylight.position.set(9,6,-2.5);daylight.target.position.set(-2,0,-4);daylight.castShadow=true;daylight.shadow.mapSize.set(innerWidth<600?1024:2048,innerWidth<600?1024:2048);daylight.shadow.camera.left=-8;daylight.shadow.camera.right=8;daylight.shadow.camera.top=8;daylight.shadow.camera.bottom=-8;daylight.shadow.camera.near=.2;daylight.shadow.camera.far=24;daylight.shadow.bias=-.0003;daylight.shadow.normalBias=.018;daylight.shadow.radius=3;scene.add(daylight,daylight.target);
+        const entryLight=new THREE.PointLight('#ffe0b4',27,10,2);entryLight.position.set(-.35,2.7,4.5);scene.add(entryLight);
+        const roomFill=new THREE.PointLight('#fff0cf',16,12,2);roomFill.position.set(-2.4,2.75,-3.7);scene.add(roomFill);
+        const referencePoints={ wood:new THREE.Vector3(-4.4,1.6,-4), sofa:new THREE.Vector3(1.3,.9,-6.1), light:new THREE.Vector3(4.5,2.35,-5.3) };
+        const hotspotElements=Object.fromEntries(Object.keys(referencePoints).map(key=>[key,document.querySelector(`[data-detail="${key}"]`)]));
+        let progress=window.allHomeTour.getProgress(), lookX=0,lookY=0,targetX=0,targetY=0, lastTime=0;
+        const projected=new THREE.Vector3(); const lookAt=new THREE.Vector3();
+        const setCamera=()=>{
+          const p=motion.matches?(progress>.5?1:0):progress; const opening=ease(.02,.45,p); const advance=ease(.40,1,p); const mobile=hero.clientWidth<600;
+          hinge.rotation.y=opening*1.77;
+          const initialX=mobile?0:-.88; const initialZ=mobile?7.55:6.65;
+          camera.fov=mobile?58:49;
+          // Keep the camera centered while crossing the real frame; only look around after entry.
+          camera.position.set(THREE.MathUtils.lerp(initialX,.15,ease(.15,.72,p))+lookX*.13*advance,1.56 + Math.sin(advance*Math.PI)*.014,THREE.MathUtils.lerp(initialZ,-2.43,advance));
+          const aimX=THREE.MathUtils.lerp(initialX,.45,advance)+lookX*.75*advance;
+          lookAt.set(aimX,THREE.MathUtils.lerp(1.53,1.32,advance)+lookY*.36*advance,-6.5);
+          camera.lookAt(lookAt);camera.updateProjectionMatrix();camera.updateMatrixWorld();
+          for(const key of Object.keys(referencePoints)) {
+            projected.copy(referencePoints[key]).project(camera);
+            const el=hotspotElements[key]; const x=clamp((projected.x*.5+.5)*hero.clientWidth,28,hero.clientWidth-94); const y=clamp((-projected.y*.5+.5)*hero.clientHeight,130,hero.clientHeight-240);
+            el.style.left=`${x}px`;el.style.top=`${y}px`;el.style.right='auto';el.style.transform='none';
+          }
+        };
+        const render = now => {
+          frame=0;if(disposed||!visible||document.hidden)return;
+          const dt=Math.min(.05,(now-(lastTime||now-16))/1000);lastTime=now;
+          if(motion.matches){lookX=lookY=targetX=targetY=0;}else{const blend=1-Math.exp(-9*dt);lookX+=(targetX-lookX)*blend;lookY+=(targetY-lookY)*blend;}
+          setCamera();renderer.render(scene,camera);needsFrame=false;
+          if(Math.abs(targetX-lookX)+Math.abs(targetY-lookY)>.001) frame=requestAnimationFrame(render);
+        };
+        const invalidate=()=>{needsFrame=true;if(!frame&&!disposed&&visible&&!document.hidden)frame=requestAnimationFrame(render);};
+        const api={setProgress(p){progress=p;invalidate();},resetLook(){targetX=targetY=lookX=lookY=0;invalidate();}};
+        window.allHomeTour.attach(api);
+        hero.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||window.allHomeTour.isDragging()||motion.matches||progress<.94)return;const r=hero.getBoundingClientRect();targetX=clamp((e.clientX-r.left)/r.width-.5,-.5,.5);targetY=clamp(.5-(e.clientY-r.top)/r.height,-.35,.35);invalidate();});
+        hero.addEventListener('pointerleave',()=>{targetX=targetY=0;invalidate();});
+        const observer=new ResizeObserver(()=>{if(disposed)return;renderer.setSize(hero.clientWidth,hero.clientHeight);camera.aspect=hero.clientWidth/hero.clientHeight;invalidate();});observer.observe(hero);
+        const visibility=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)invalidate();else{cancelAnimationFrame(frame);frame=0;}},{threshold:0});visibility.observe(hero);
+        document.addEventListener('visibilitychange',()=>{lastTime=0;if(!document.hidden)invalidate();});
+        motion.addEventListener('change',()=>api.resetLook());
+        renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();observer.disconnect();visibility.disconnect();fallback();});
+        // Compile before revealing so slow devices retain the original photo, never a blank screen.
+        setCamera(); await renderer.compileAsync(scene,camera); renderer.render(scene,camera);
+        document.documentElement.classList.add('webgl-ready');
+        document.querySelector('.entrance-small').textContent='화면을 왼쪽으로 드래그해 직접 문을 열어보세요';
+        document.querySelector('.hero-caption').innerHTML='<strong>Step into your new everyday.</strong><br>ALL INTERIOR · 3D 공간 콘셉트';
+        document.getElementById('tour-status').textContent='3D 공간이 준비됐습니다. 들어가기 버튼 또는 재생 버튼을 눌러보세요.';
+        invalidate();
+      } catch(error) { console.warn('The 3D tour is unavailable; photo tour remains available.',error); fallback(); }
+    })();
+  </script>
+</body>
+</html>
