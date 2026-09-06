@@ -10,7 +10,7 @@ for (const block of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
 }
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 if (new Set(ids).size !== ids.length) throw new Error('Duplicate HTML IDs');
-for (const match of html.matchAll(/(?:src|href)="(assets\/[^"#]+)"/g)) {
+for (const match of html.matchAll(/(?:src|href|poster)="(assets\/[^"#]+)"/g)) {
   await access(resolve(root, match[1]));
 }
 const output = resolve(root, 'dist');

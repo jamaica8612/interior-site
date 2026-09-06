@@ -1,0 +1,35 @@
+# 올 인테리어 디자인 · Google Flow 영상
+
+상태: 2026-09-06 Google Flow에서 영상 생성 및 다운로드 완료. 기존 Google 계정으로 일반 Chrome에서 접속해 Veo 3.1 Quality, 1개 출력, 100 크레딧으로 생성했다.
+
+- 프로젝트: https://flow.google.com/project/2416fb4c-3136-462d-bb55-325ddc7bf888
+- 결과: https://flow.google.com/project/2416fb4c-3136-462d-bb55-325ddc7bf888/edit/5fa99b82-08ce-4a20-b5b3-288865d50ea6
+- 원본: 8초 / 1280×720 / 24fps / H.264 + AAC / 7,018,573바이트. 원본은 로컬 다운로드 폴더에 보관.
+- 홈페이지 파일: `assets/entrance-flow.mp4`, 음소거용 오디오 제거, H.264, 0.5초마다 키프레임, faststart, 2,199,041바이트.
+- 포스터: 실제 영상의 첫 프레임 `assets/entrance-flow-poster.webp`.
+- 사진 업로드는 Chrome 확장 권한으로 불가해 텍스트로 제작했다. 아래 사진은 업로드하지 않았다. 실제 영상은 참조 이미지와 동일한 공간이 아닌 별도의 AI 콘셉트다.
+- 프레임 점검: 닫힌 월넛 문에서 시작해 문이 열리고 카메라가 거실로 전진하는 동작 확인. 실제 결과의 경첩은 프롬프트와 달리 오른쪽에 있다.
+
+## 연출
+
+- 8초, 가로 16:9, 가능한 최고 원본 해상도.
+- 0–2초: 닫힌 월넛 현관문이 왼쪽 경첩을 중심으로 안쪽으로 열린다.
+- 2–6초: 문이 열린 뒤 카메라가 문턱을 지나 거실로 천천히 들어간다.
+- 6–8초: 오른쪽에서 햇살이 들어오는 거실을 보여주며 부드럽게 멈춘다.
+- 문과 이동 경로는 화면 중앙에 두어 휴대폰 세로 화면에서도 잘리지 않게 한다.
+- 사람, 손, 자막, 로고, 장면 전환, 가구 변형 없이 한 장면으로 만든다.
+
+## 초기 연출 프롬프트
+
+An 8-second continuous photorealistic architectural shot, landscape 16:9. Begin at eye level facing a fully CLOSED solid walnut entry door within a dark walnut frame. During seconds 0–2, the door smoothly swings inward on its LEFT hinge, revealing the warm apartment beyond; its hinge stays fixed and the door remains rigid. During seconds 2–6, the camera slowly glides forward through the clear doorway into the living room, with natural perspective and subtle parallax. During seconds 6–8, gently settle on the finished interior: walnut ceiling and walls, ivory linen sectional sofa, low travertine coffee table, sheer curtains, and warm afternoon sunlight entering floor-to-ceiling windows on the RIGHT. Match the reference room's architecture, furniture, materials, and lighting throughout. Keep the doorway opening, camera path, and principal furniture within the central third for mobile cropping. Quiet, inviting, premium editorial realism. One uninterrupted shot; no cuts, dissolves, digital zoom, object morphing, moving furniture, people, hands, text, or logos.
+
+## 참조 이미지
+
+- `assets/living-room.webp`: 완성된 거실의 재료, 가구, 채광을 위한 참조 또는 마지막 프레임.
+- `assets/entrance.webp`: 문이 이미 열린 이미지이므로 닫힌 문에서 시작하는 첫 프레임으로 사용하지 않는다. 중간 구도 참조용.
+
+## 홈페이지 연결과 확인
+
+기본 첫 화면은 실제 Flow 영상이다. 재생 버튼은 영상의 실제 재생 시계에 맞춰 스크롤하고, 직접 스크롤하거나 진행 막대를 움직이면 해당 프레임으로 이동한다. 영상은 muted/playsinline으로 열리고 별도의 자동재생은 하지 않는다. 기존 3D 화면은 `?tour=3d`에서 제공하며 영상 오류 시 3D로 전환한다. 콘셉트 영상임을 표시하고 기존 상담 기능과 자간·간격을 유지한다.
+
+Node DOM 모형으로 재생, 스크롤 동기화, 정지, 탐색, 다시 보기, 동작 줄이기 설정, 메타데이터 지연, 영상 오류, 3D 라우팅을 확인했다. 실제 휴대폰의 브라우저 재생은 별도 실기기 검증을 하지 않았다.
