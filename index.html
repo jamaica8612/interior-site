@@ -154,7 +154,7 @@
     <div id="quote-result" hidden><p class="success-label">✓ &nbsp; 상담할 내용이 준비됐어요</p><div class="summary-body" id="quote-summary"></div><p class="summary-notice">아래 내용을 복사해 올 인테리어 디자인의 당근·인스타그램·네이버 상담 채널에 보내주세요. 선택한 사진은 해당 채널에서 별도로 첨부해주세요.</p><div class="form-actions"><button class="secondary-btn" id="quote-edit">수정하기</button><button class="secondary-btn" id="quote-download">텍스트 저장</button><button class="primary-btn" id="quote-copy">내용 복사 <svg class="icon"><use href="#arrow-right"/></svg></button></div><p class="status-message" id="copy-status" role="status" aria-live="polite"></p></div>
   </div></dialog>
   <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title"><div class="dialog-content"><div class="dialog-top"><p class="eyebrow" id="preview-title">SPACE CONCEPT</p><button class="dialog-close" data-close aria-label="이미지 닫기"><svg class="icon"><use href="#close"/></svg></button></div><img class="preview-image" id="preview-image" alt=""><p class="preview-caption" id="preview-caption"></p></div></dialog>
-  <script src="assets/film-sequence.js"></script>
+  <script src="assets/film-sequence-atlas.js"></script>
   <script>
     (() => {
       'use strict';
@@ -189,7 +189,7 @@
       const tourPlay = $('#tour-play');
       const journeyDistance = () => Math.max(1, walkthrough.offsetHeight - homeScene.offsetHeight);
       const setPlaying = playing => { isTravelling = playing; tourPlay.classList.toggle('is-playing', playing); tourPlay.setAttribute('aria-label', playing ? '공간 둘러보기 일시 정지' : '공간 둘러보기 재생'); };
-      const stopTravel = () => { cancelAnimationFrame(journeyAnimation); journeyAnimation = 0; cancelAnimationFrame(filmFrame); filmFrame = 0; filmPlayRequest++; if(filmEnabled) film.pause(); setPlaying(false); if(filmEnabled) filmSequence?.render(journey); };
+      const stopTravel = () => { const wasPlaying = isTravelling; cancelAnimationFrame(journeyAnimation); journeyAnimation = 0; cancelAnimationFrame(filmFrame); filmFrame = 0; filmPlayRequest++; if(filmEnabled) film.pause(); setPlaying(false); if(filmEnabled) filmSequence?.render(journey, {immediate:wasPlaying}); };
       const setJourney = p => window.scrollTo({ top: walkthrough.offsetTop + Math.max(0, Math.min(1, p))*journeyDistance(), behavior: 'instant' });
       const updateJourney = () => {
         journey = Math.max(0, Math.min(1, (window.scrollY - walkthrough.offsetTop) / journeyDistance()));
