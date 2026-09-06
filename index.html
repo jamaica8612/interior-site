@@ -58,6 +58,12 @@
     .tour-mode-link{display:inline-flex;align-items:center;min-height:32px;font-size:11px;letter-spacing:.02em;text-decoration:underline;text-underline-offset:4px;color:#ffffffbe}
     @media(max-width:560px){.film-ready .hero-content{padding-top:clamp(140px,23svh,220px)}.film-ready .hero h1{font-size:clamp(1.875rem,7.9vw,2.25rem);line-height:1.4;letter-spacing:-.018em}.film-ready .hero-sub{font-size:.875rem;line-height:1.8}.film-ready .room-message p{display:none}.film-ready .room-message{bottom:192px}.film-ready .hero-caption{max-width:160px}.tour-mode-link{font-size:11px;min-height:36px}.film-ready .hero-bottom{align-items:flex-end}}
     @media(max-height:600px) and (min-width:561px){.film-ready .hero-content{padding-top:100px}.film-ready .hero h1{font-size:2rem;margin-block:1rem}.film-ready .hero-sub,.film-ready .entrance-small{display:none}}
+      /* Keep moving film layers free of backdrop re-filtering and inherited progress styles. */
+    .film-ready .journey-line::before{width:100%;transform:scaleX(var(--line-progress,0));transform-origin:left}
+    .film-ready .journey-transport{backdrop-filter:none;background:#17231fc2}
+    .film-ready .site-header.is-fixed{backdrop-filter:none}
+    .film-ready .room-controls button{backdrop-filter:none;background:#17231fa6}
+    .film-ready .entrance-frames{contain:strict}
   </style>
   <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
 </head>
@@ -154,7 +160,7 @@
     <div id="quote-result" hidden><p class="success-label">✓ &nbsp; 상담할 내용이 준비됐어요</p><div class="summary-body" id="quote-summary"></div><p class="summary-notice">아래 내용을 복사해 올 인테리어 디자인의 당근·인스타그램·네이버 상담 채널에 보내주세요. 선택한 사진은 해당 채널에서 별도로 첨부해주세요.</p><div class="form-actions"><button class="secondary-btn" id="quote-edit">수정하기</button><button class="secondary-btn" id="quote-download">텍스트 저장</button><button class="primary-btn" id="quote-copy">내용 복사 <svg class="icon"><use href="#arrow-right"/></svg></button></div><p class="status-message" id="copy-status" role="status" aria-live="polite"></p></div>
   </div></dialog>
   <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title"><div class="dialog-content"><div class="dialog-top"><p class="eyebrow" id="preview-title">SPACE CONCEPT</p><button class="dialog-close" data-close aria-label="이미지 닫기"><svg class="icon"><use href="#close"/></svg></button></div><img class="preview-image" id="preview-image" alt=""><p class="preview-caption" id="preview-caption"></p></div></dialog>
-  <script src="assets/film-sequence-atlas.js"></script>
+  <script src="assets/film-sequence-gpu.js"></script>
   <script>
     (() => {
       'use strict';
@@ -178,7 +184,7 @@
         if (Math.abs(film.currentTime - time) > .04) film.currentTime = time;
       };
       let journey = 0;
-      let wasInside = false;
+      let wasInside = null;
       let journeyAnimation = 0;
       let journeyVelocity = 0;
       let isTravelling = false;
@@ -187,31 +193,66 @@
       let suppressSceneClick = false;
       const tourProgress = $('#tour-progress');
       const tourPlay = $('#tour-play');
-      const journeyDistance = () => Math.max(1, walkthrough.offsetHeight - homeScene.offsetHeight);
-      const setPlaying = playing => { isTravelling = playing; tourPlay.classList.toggle('is-playing', playing); tourPlay.setAttribute('aria-label', playing ? '공간 둘러보기 일시 정지' : '공간 둘러보기 재생'); };
-      const stopTravel = () => { const wasPlaying = isTravelling; cancelAnimationFrame(journeyAnimation); journeyAnimation = 0; cancelAnimationFrame(filmFrame); filmFrame = 0; filmPlayRequest++; if(filmEnabled) film.pause(); setPlaying(false); if(filmEnabled) filmSequence?.render(journey, {immediate:wasPlaying}); };
-      const setJourney = p => window.scrollTo({ top: walkthrough.offsetTop + Math.max(0, Math.min(1, p))*journeyDistance(), behavior: 'instant' });
-      const updateJourney = () => {
-        journey = Math.max(0, Math.min(1, (window.scrollY - walkthrough.offsetTop) / journeyDistance()));
-        homeScene.style.setProperty('--journey', journey.toFixed(4));
+      const heroContent = $('.hero-content', homeScene), roomMessage = $('#room-message');
+      const roomControls = $('#room-controls'), roomHotspots = $('#room-hotspots'), journeyLine = $('.journey-line');
+      const tourLocation = $('#tour-location'), tourPercent = $('#tour-percent');
+      let tourBounds = { top:0, distance:1, bottom:0 };
+      const measureTour = () => {
+        const top = walkthrough.getBoundingClientRect().top + window.scrollY;
+        const height = walkthrough.offsetHeight, sceneHeight = homeScene.offsetHeight;
+        tourBounds = { top, distance:Math.max(1,height-sceneHeight), bottom:top+height };
+      };
+      measureTour();
+      const journeyDistance = () => tourBounds.distance;
+      const setPlaying = playing => { if(isTravelling===playing)return; isTravelling = playing; tourPlay.classList.toggle('is-playing', playing); tourPlay.setAttribute('aria-label', playing ? '공간 둘러보기 일시 정지' : '공간 둘러보기 재생'); };
+      const stopTravel = () => { if(!isTravelling&&!journeyAnimation&&!filmFrame)return; const wasPlaying = isTravelling; cancelAnimationFrame(journeyAnimation); journeyAnimation = 0; cancelAnimationFrame(filmFrame); filmFrame = 0; filmPlayRequest++; if(filmEnabled) film.pause(); setPlaying(false); if(filmEnabled) filmSequence?.render(journey, {immediate:wasPlaying}); };
+      const setJourney = p => window.scrollTo({ top: tourBounds.top + Math.max(0, Math.min(1, p))*journeyDistance(), behavior: 'instant' });
+      let lastJourney = -1, lastPercent = -1, lastLocation = '', lastInactive = null;
+      let headerFixed = null, bottomShown = null, pastHome = null;
+      const updateJourney = scrollY => {
+        journey = Math.max(0, Math.min(1, (scrollY - tourBounds.top) / journeyDistance()));
+        if(journey !== lastJourney) {
+          if(filmEnabled) {
+            heroContent.style.opacity = String(Math.max(0,1-journey*2.5));
+            heroContent.style.transform = reducedMotion.matches ? 'none' : `translate3d(0,${-50*journey}px,0)`;
+            roomMessage.style.opacity = String(Math.max(0,Math.min(1,(journey-.78)*5)));
+            roomMessage.style.transform = reducedMotion.matches ? 'none' : `translate3d(0,${25*(1-journey)}px,0)`;
+            roomControls.style.opacity = String(Math.max(0,Math.min(1,(journey-.65)*4)));
+            journeyLine.style.setProperty('--line-progress',journey);
+          } else homeScene.style.setProperty('--journey',journey.toFixed(4));
+          view3D?.setProgress(journey);
+          if(filmEnabled && !isTravelling) { if(filmSequence) filmSequence.render(journey); else seekFilm(journey); }
+          lastJourney = journey;
+        }
         const inside = journey > .94;
-        homeScene.classList.toggle('is-inside', inside);
-        $('#room-hotspots').inert = filmEnabled || !inside; $('#room-controls').inert = !inside;
-        $('.hero-content', homeScene).inert = journey > .39;
-        $('#room-message').setAttribute('aria-hidden', String(!inside));
-        mobileBottom.classList.toggle('past-home', window.scrollY > walkthrough.offsetHeight - 120);
+        const inactive = journey > .39;
+        if(lastInactive !== inactive) { heroContent.inert = inactive; lastInactive = inactive; }
         const location = journey < .02 ? '현관 앞' : journey < (filmEnabled ? .28 : .46) ? '문이 열립니다' : journey < .94 ? '집 안으로' : '거실에 도착했어요';
-        tourProgress.value = String(Math.round(journey*100)); tourProgress.setAttribute('aria-valuetext', location); $('#tour-location').textContent = location; $('#tour-percent').textContent = `${Math.round(journey*100)}%`;
-        view3D?.setProgress(journey);
-        if (filmEnabled && !isTravelling) { if(filmSequence) filmSequence.render(journey); else seekFilm(journey); }
-        if (wasInside !== inside) { $('#journey-scroll').textContent = inside ? 'SCROLL TO EXPLORE MORE' : 'SCROLL TO STEP INSIDE'; $('#tour-status').textContent = inside ? (filmEnabled ? '거실에 도착했습니다. 아래로 내려 더 많은 공간을 만나보세요.' : '거실에 도착했습니다. 포인트를 눌러 공간을 살펴보세요.') : ''; wasInside = inside; }
+        const percent = Math.round(journey*100);
+        if(lastPercent !== percent) { tourProgress.value = String(percent); tourPercent.textContent = `${percent}%`; lastPercent = percent; }
+        if(lastLocation !== location) { tourProgress.setAttribute('aria-valuetext',location); tourLocation.textContent = location; lastLocation = location; }
+        if (wasInside !== inside) {
+          homeScene.classList.toggle('is-inside',inside); roomHotspots.inert = filmEnabled || !inside; roomControls.inert = !inside;
+          roomMessage.setAttribute('aria-hidden',String(!inside));
+          $('#journey-scroll').textContent = inside ? 'SCROLL TO EXPLORE MORE' : 'SCROLL TO STEP INSIDE';
+          $('#tour-status').textContent = inside ? (filmEnabled ? '거실에 도착했습니다. 아래로 내려 더 많은 공간을 만나보세요.' : '거실에 도착했습니다. 포인트를 눌러 공간을 살펴보세요.') : ''; wasInside = inside;
+        }
       };
       let scrollPending = false;
-      const updateScroll = () => { header.classList.toggle('is-fixed', window.scrollY > 110); mobileBottom.classList.toggle('shown', window.scrollY > 620); updateJourney(); scrollPending = false; };
+      const updateScroll = () => {
+        const scrollY = window.scrollY, fixed = scrollY > 110, shown = scrollY > 620, past = scrollY > tourBounds.bottom-120;
+        updateJourney(scrollY);
+        if(headerFixed !== fixed) { header.classList.toggle('is-fixed',fixed); headerFixed = fixed; }
+        if(bottomShown !== shown) { mobileBottom.classList.toggle('shown',shown); bottomShown = shown; }
+        if(pastHome !== past) { mobileBottom.classList.toggle('past-home',past); pastHome = past; }
+        scrollPending = false;
+      };
       window.addEventListener('scroll', () => { if (!scrollPending) { scrollPending = true; requestAnimationFrame(updateScroll); } }, { passive: true });
       updateScroll();
       let viewportWidth = window.innerWidth;
-      window.addEventListener('resize', () => { if(window.innerWidth !== viewportWidth) { stopTravel(); viewportWidth = window.innerWidth; } updateScroll(); }, { passive: true });
+      window.addEventListener('resize', () => { measureTour(); if(window.innerWidth !== viewportWidth) { stopTravel(); viewportWidth = window.innerWidth; } updateScroll(); }, { passive: true });
+      const tourObserver = new ResizeObserver(() => { measureTour(); updateScroll(); });
+      tourObserver.observe(walkthrough); tourObserver.observe(homeScene);
       const travelTo = (target, releaseVelocity) => {
         const inheritedVelocity = isTravelling ? journeyVelocity : 0;
         stopTravel();
@@ -227,6 +268,7 @@
             if (Number.isFinite(film.duration) && film.duration > 0) { setJourney(film.currentTime/film.duration); updateScroll(); }
             filmFrame = requestAnimationFrame(followFilm);
           };
+          filmSequence?.hide();
           film.play().then(() => { if (request === filmPlayRequest && isTravelling) followFilm(); }).catch(() => {
             if (request !== filmPlayRequest) return;
             stopTravel(); $('#tour-status').textContent = '재생 버튼을 다시 눌러주세요. 진행 막대로도 장면을 살펴볼 수 있어요.';
@@ -256,7 +298,7 @@
       window.addEventListener('touchstart', e => { if (!e.target.closest('.journey-transport')) stopTravel(); }, { passive: true });
       window.addEventListener('keydown', e => { if (e.target.matches('input,textarea,select')) return; if (['ArrowDown','ArrowUp','PageDown','PageUp','Home','End','Escape'].includes(e.key)) stopTravel(); });
       document.addEventListener('visibilitychange', () => { if (document.hidden) stopTravel(); });
-      reducedMotion.addEventListener('change', () => { stopTravel(); view3D?.resetLook(); updateScroll(); });
+      reducedMotion.addEventListener('change', () => { stopTravel(); view3D?.resetLook(); lastJourney = -1; updateScroll(); });
       homeScene.addEventListener('pointerdown', e => {
         if (!view3D || reducedMotion.matches || !e.isPrimary || e.button !== 0 || e.target.closest('a,button,input,select,textarea,.hotspot-panel')) return;
         stopTravel(); view3D.resetLook();
@@ -287,11 +329,19 @@
         $('.hero-caption').innerHTML = '<strong>A little closer to home.</strong><br>ALL INTERIOR · AI 공간 콘셉트 영상<br><a class="tour-mode-link" href="?tour=3d">3D로도 둘러보기 ↗</a>';
         filmSequence = window.createFilmSequence?.({
           canvas: $('#entrance-frames'),
+          onLoading: percent => { $('.entrance-small').textContent = `공간을 준비하고 있어요 · ${percent}%`; },
+          onReady: () => { $('.entrance-small').textContent = '버튼 없이, 천천히 아래로 스크롤해 보세요.'; },
           onFrame: () => { if(!isTravelling && filmEnabled) document.documentElement.classList.add('film-show-frames'); },
-          onFailure: () => { $('#tour-status').textContent = '장면을 불러오고 있어요. 재생 버튼으로도 들어갈 수 있어요.'; }
+          onFailure: () => {
+            filmSequence?.dispose(); filmSequence = null; document.documentElement.classList.remove('film-show-frames');
+            $('.entrance-small').textContent = '아래 버튼을 눌러 공간을 둘러보세요.';
+            $('#tour-status').textContent = '이 기기에서는 영상 재생으로 둘러볼 수 있어요.';
+            lastJourney = -1; updateScroll();
+          }
         }) || null;
         filmSequence?.render(journey);
         film.addEventListener('playing', () => {
+          if(!isTravelling) { film.pause(); return; }
           document.documentElement.classList.remove('film-show-frames'); filmSequence?.hide();
         });
         film.addEventListener('loadedmetadata', () => { if(isTravelling || !filmSequence) seekFilm(journey); });
@@ -299,6 +349,8 @@
         film.addEventListener('error', () => {
           stopTravel(); filmEnabled = false; document.documentElement.classList.remove('film-ready');
           filmSequence?.dispose(); filmSequence = null; document.documentElement.classList.remove('film-show-frames');
+          for(const element of [heroContent,roomMessage,roomControls]) { element.style.opacity = ''; element.style.transform = ''; }
+          lastJourney = -1; wasInside = null; updateScroll();
           window.dispatchEvent(new Event('all-film-unavailable'));
         }, {once:true});
         film.src = film.dataset.src;
