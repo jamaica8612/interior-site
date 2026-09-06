@@ -2,5 +2,5 @@
   "name": "all-interior-home",
   "private": true,
   "version": "1.0.0",
-  "scripts": { "build": "node scripts/build.mjs" }
+  "scripts": { "build": "node scripts/build.mjs", "check:film": "node scripts/check-film.cjs" }
 }
