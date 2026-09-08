@@ -20,13 +20,20 @@
     .it { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; }
     .kr { font-family: 'Noto Sans KR', sans-serif; }
     .film-still { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-      transform-origin: 56% 46%; will-change: transform;
+      transform-origin: 52% 45%; will-change: transform;
       animation: hero-drift 34s cubic-bezier(.42, 0, .58, 1) infinite alternate; }
     @keyframes hero-drift {
-      from { transform: scale(1.03) translate3d(0, 0, 0); }
-      to   { transform: scale(1.16) translate3d(0, -1.4%, 0); }
+      from { transform: scale(1.02) translate3d(0, 0, 0); }
+      to   { transform: scale(1.15) translate3d(0, -1.2%, 0); }
     }
-    @media (prefers-reduced-motion: reduce) { .film-still { animation: none; transform: scale(1.06); } }
+    .hero-glow { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+      background: radial-gradient(46% 58% at 52% 44%, #ffd9a63d 0%, #ffce9119 44%, transparent 72%);
+      animation: hero-lights 34s cubic-bezier(.42, 0, .58, 1) infinite alternate; }
+    @keyframes hero-lights { from { opacity: .12; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .film-still { animation: none; transform: scale(1.06); }
+      .hero-glow { animation: none; opacity: .6; }
+    }
   </style>
 </helmet>
 
@@ -35,7 +42,8 @@
   <!-- HERO — 입장 필름 -->
   <div style="position: relative; height: 560px; background: #252a25; overflow: hidden; color: #fff">
     <div style="position: absolute; inset: 0; overflow: hidden">
-      <img class="film-still" src="film-2.webp" alt="현관문이 열리며 거실로 이어지는 입장 연출">
+      <img class="film-still" src="hero-film.webp" alt="유리문이 열리며 복도 너머 거실로 이어지는 입장 연출">
+      <div class="hero-glow"></div>
     </div>
     <div style="position: absolute; inset: 0; background: linear-gradient(0deg, #161d19e8 0%, #171e1b40 46%, #141a1670 100%)"></div>
 
