@@ -2,3 +2,6 @@ dist/
 *.tar.gz
 .env
 .env.*
+
+# Claude Design 캔버스 빌드 산출물 (2.9MB, seed-canvas.mjs로 재생성)
+.design/all-interior-redesign.html
