@@ -1,0 +1,16 @@
+# Cloudflare Worker 배포 설정.
+# server/worker.mjs 가 /api/chat 을 처리하고, 나머지 요청은 정적 파일(env.ASSETS)로 넘긴다.
+# 배포 전에 반드시 `npm run build` 로 dist/ 를 만들어야 한다 (npm run deploy 가 함께 실행).
+
+name = "all-interior-home"
+main = "dist/server/index.js"
+compatibility_date = "2025-06-01"
+
+[assets]
+directory = "./dist/client"
+binding = "ASSETS"
+
+# GEMINI_API_KEY 는 소스에 넣지 말고 시크릿으로 등록한다:
+#   npx wrangler secret put GEMINI_API_KEY
+# 모델을 바꾸려면 (선택):
+#   npx wrangler secret put GEMINI_MODEL

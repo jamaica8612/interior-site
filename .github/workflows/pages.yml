@@ -1,0 +1,47 @@
+# main 에 push 되면 정적 사이트를 GitHub Pages 에 배포한다.
+# AI 상담(/api/chat)은 서버가 필요하므로 Pages 에서는 동작하지 않는다 — docs/deploy.md 참고.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 검증 및 빌드
+        run: |
+          node scripts/build.mjs
+          node scripts/check-chat.mjs
+          node scripts/check-film.cjs
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

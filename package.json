@@ -2,5 +2,13 @@
   "name": "all-interior-home",
   "private": true,
   "version": "1.0.0",
-  "scripts": { "build": "node scripts/build.mjs", "check:film": "node scripts/check-film.cjs" }
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-chat.mjs && node scripts/check-film.cjs",
+    "check:film": "node scripts/check-film.cjs",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.20.0"
+  }
 }
