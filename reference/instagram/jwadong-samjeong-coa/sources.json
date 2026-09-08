@@ -1,0 +1,111 @@
+{
+  "project": "좌동 삼정코아 아파트",
+  "workDateAsPosted": "24.04",
+  "postDate": "2024-04-22",
+  "collectedAt": "2026-09-08",
+  "account": "ol_interior_design",
+  "sourceVerification": "Linked from totalsolution_, which is linked by the business Daangn profile. Project name and date appear in both Instagram captions.",
+  "status": "Original downloaded photos. No retouching or AI regeneration. Floor plan and exact unit size not yet provided.",
+  "photos": [
+    {
+      "file": "01-bedroom-window.jpg",
+      "description": "침실 창호와 붙박이장",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6Ddhc-p44b/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/655163221_18131590834535301_4416228628549680918_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzM1MTY1MjM4MDI0NTgyMTkyMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=IPoG9dMR354Q7kNvwGyWEuF&_nc_oc=Adp7mybN1BWMVVqCnQ-Fq94gfIfhhe8fZ2DRPkvfTSh_mmTWMHZ_ZM67r8YaGxdxfbv997PPBCG9zs6NnulO0zlr&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=FeTCVIrIkwvscpt4ohnFQg&_nc_ss=7a22e&oh=00_AQJjTau8865iAzlRoV_j5NiLP73un7juRjqK_b5Z_4cCug&oe=6AA587EC",
+      "sha256": "60efd8d12bd26f882c2304225ef94e68e728e70c000b5dddf1df384c3d1c68f6",
+      "bytes": 387007
+    },
+    {
+      "file": "02-bedroom-storage.jpg",
+      "description": "침실 붙박이장",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6Ddhc-p44b/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/654202986_18074655710169307_2283268987068258144_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=MzM1MTY1MjM4MDI1NDQwNDQ2OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=FWwEwcbsqJMQ7kNvwEu98IB&_nc_oc=AdrFz4FDMr0QCXYU5gVZlkgD8YMFMbbrrhRYNtOrEsjxtzpF6D5GmkgFcu9clCwmccUfPmNRJifbdIw4eo5yKWGU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=FeTCVIrIkwvscpt4ohnFQg&_nc_ss=7a22e&oh=00_AQIQIgCdvdWwZ8iJ7U76PLsGYtf1iR0_BrD_KTFzVozJYA&oe=6AA5ADE2",
+      "sha256": "5ce5fbcb8b6e1c89dc3a53f45c4496921371c54bb8f130fcb1f89b486aa90775",
+      "bytes": 293388
+    },
+    {
+      "file": "03-bedroom-door.jpg",
+      "description": "침실 출입구 방향",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6Ddhc-p44b/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/656268508_18094631162006627_9085571009823065373_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=MzM1MTY1MjM4MDI1NDM3MDgzMA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=uYuq6y85dXMQ7kNvwEYBhvS&_nc_oc=AdrY6kItgYVcNOxPhi9Z79YzUts0Eap9NrBTxNsbOOHHe3iwSUjdyH3NnUjq14LqOCGuHSzwbc2bKECirOL45wLQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=FeTCVIrIkwvscpt4ohnFQg&_nc_ss=7a22e&oh=00_AQJR-VpW82JsHrfTl65QyG3MpmYRuSHDcUyOBSuWwpLHaA&oe=6AA59241",
+      "sha256": "51795821012e6cea724070f437aa1a787dd3e62ba46d53a4c293b01f0a8993fa",
+      "bytes": 258371
+    },
+    {
+      "file": "04-bathroom-door.jpg",
+      "description": "욕실 출입문과 세면대",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6Ddhc-p44b/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/656072984_18134838058525459_1625769409631217670_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=MzM1MTY1MjM4MDI0NjAxNDMwNA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=V9ZJ8CG_TFUQ7kNvwHaNkRQ&_nc_oc=AdrRibhMJN_Ikw3Il3Lcn0Sj5ONVpKCn-mmwyy_gSnb-jfm55dSO_LmyZQS0dn30nM76dJy2c3qi9OcKDzgaemvP&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=FeTCVIrIkwvscpt4ohnFQg&_nc_ss=7a22e&oh=00_AQK7QGHEdo0bMO7svaNB-a7k0jGPZ5AxUV_cDnIdjQU4jQ&oe=6AA5B0C1",
+      "sha256": "90c063964c9ca4efd36cd88de7e0c10a5f2edf41e3656a8050047f359a21291a",
+      "bytes": 383152
+    },
+    {
+      "file": "05-bathroom-shower.jpg",
+      "description": "욕실 세면대와 샤워 공간",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6Ddhc-p44b/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/660963192_18572916259034163_2353609186461752249_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=MzM1MTY1MjM4MDI1NDE2NzU3NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=LfMFMlw6FuwQ7kNvwFuPN8U&_nc_oc=AdrLGtQB2RMxbGrEqBle8V8og6BN42Ba_I-sZ6GeStbe8SWu1vnmoBGfzEr6qZ6pIcsb-Te_vQ9I4W8IyYD1RVf3&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=FeTCVIrIkwvscpt4ohnFQg&_nc_ss=7a22e&oh=00_AQJYN6NrnlBDllPrD10h-eZEDfiCGijjbKyvhuDFEk9ZvQ&oe=6AA59207",
+      "sha256": "89abd02b25adf930b8eee4d5739952f5e34fe1a539f2be082bd7874a1538e2a6",
+      "bytes": 434197
+    },
+    {
+      "file": "06-kitchen.jpg",
+      "description": "주방 정면",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6DdDSQJOlk/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/655962902_18135170227516047_7625541850028234578_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=MzM1MTY1MDMwOTg5NTU2MTAwNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=aTnVcSUkL-AQ7kNvwFa55T2&_nc_oc=AdpEr3QLDezzz9WtKoElKv99sxwaf8SI46gBdSSfWAnuXG1EAADaye8qsWN9gILaX3jpQFZhbTrVEN96MbtVQ3Ah&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=Kt1r5oekS9ZZQqUYrTL_3A&_nc_ss=7a22e&oh=00_AQLr11cn6l1a14so_W-7IFBHvTatNNfRxOvobPrhvKBvqQ&oe=6AA5945C",
+      "sha256": "d7c8d3278ba8626e78bbfc10140d0cf4db7dc1ce20578d92c3e2f413df840a5f",
+      "bytes": 350566
+    },
+    {
+      "file": "07-kitchen-to-living.jpg",
+      "description": "주방에서 바라본 거실과 중문",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6DdDSQJOlk/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/655002607_18115628209710734_3406876862841682655_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzM1MTY1MDMwOTkwMzc2NTM3Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=k0FqKJTmhu8Q7kNvwGzk0p6&_nc_oc=AdrfC3moGpJZXLcTz6nDSw_UQtA5tYZRNGjKBCvnncH52J4zJ-dKkGpq9m6WQS0ehWUteC5sAkm-uoNvRPxV8WmT&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=Kt1r5oekS9ZZQqUYrTL_3A&_nc_ss=7a22e&oh=00_AQJAz7L8akHhDnZL34wM8tzxm-KAT6WgWo8ErCf4A4TyOg&oe=6AA5836D",
+      "sha256": "5f6f20b9d20c9587ff6c6df1ed74ec55d0a89f93f18ee863e10bb1d56a3c3f10",
+      "bytes": 408699
+    },
+    {
+      "file": "08-entrance-partition.jpg",
+      "description": "거실에서 바라본 중문과 주방",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6DdDSQJOlk/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/650765204_17911453200165805_3510328455359015974_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=MzM1MTY1MDMwOTg5NTU2Mzk5Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=mI-IJYmOn14Q7kNvwFbEodv&_nc_oc=AdrrinuQtTGTihGmB5sqQ3yYXJVHI7CYydnq58tgonuvRg98frQCoaB7j2XEAQ1WyxYFhAiGy76jv-4uPQ43KQDp&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=Kt1r5oekS9ZZQqUYrTL_3A&_nc_ss=7a22e&oh=00_AQIQ6dXG7bdp_QBXSRIh0YejIgkfjRuS_5b9NJIRLkXeaA&oe=6AA58743",
+      "sha256": "ea721dbfb3b90dec561b50ce43e92e99523a7330bae2c9ad3421fb587a93b16f",
+      "bytes": 357612
+    },
+    {
+      "file": "09-living-to-kitchen.jpg",
+      "description": "거실에서 바라본 주방과 방 출입구",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6DdDSQJOlk/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/656120581_18076886228136100_688937867322687813_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=MzM1MTY1MDMwOTk2MjYwMTYwNA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=WP14hX0jghsQ7kNvwELpAAB&_nc_oc=AdqKBRth8TLjoomsZaLVSuuTWyChJU1Vq7TamZ6MFTnC6cyDnnjwBE6akFldqIHptkuy6C2Srvk25O2a2GTpN2bk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=Kt1r5oekS9ZZQqUYrTL_3A&_nc_ss=7a22e&oh=00_AQIdlbe4Uqatl93nLWXJmpj0WW46wvk4wm_0pbpatFyQFw&oe=6AA5B26A",
+      "sha256": "fbaab94a37edf4d9b21d185dab743c67c74edd5b96e5abd99b0756608f6a094e",
+      "bytes": 275034
+    },
+    {
+      "file": "10-inner-corridor.jpg",
+      "description": "방으로 이어지는 내부 복도",
+      "post": "https://www.instagram.com/ol_interior_design/p/C6DdDSQJOlk/",
+      "width": 1440,
+      "height": 1440,
+      "sourceImageUrl": "https://scontent-ssn1-1.cdninstagram.com/v/t51.82787-15/660917894_18573896428040030_4832827684679938046_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=MzM1MTY1MDMwOTkwMzk3OTc4Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=294byGY95t0Q7kNvwEPMO5S&_nc_oc=AdqeUVDKohYkoP7eS08k2mA-b-zFkgjDxBp_iztz5rApzrKmt-roI8RbVmhVfeZEC8jPI5CBd9cNVLrPyY5CoXPu&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=Kt1r5oekS9ZZQqUYrTL_3A&_nc_ss=7a22e&oh=00_AQLZm-Pc9wmQyQeROBx9oZdsq6oXQw5P6tiefqi1fcr1_w&oe=6AA5B551",
+      "sha256": "82579b1962ba9eeecc2d59f61946ae603b3ee5e17e07aca6f0132104fe23dbc8",
+      "bytes": 282346
+    }
+  ]
+}

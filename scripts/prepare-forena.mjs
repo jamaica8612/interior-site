@@ -1,0 +1,10 @@
+import {spawnSync} from 'node:child_process';
+import {mkdirSync} from 'node:fs';
+const ff='C:/Users/jamai/Documents/Codex/2026-09-06/new-chat/work/video-deps/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe';
+const run=args=>{const r=spawnSync(ff,['-hide_banner','-loglevel','error','-y',...args],{stdio:'inherit'});if(r.status!==0)throw Error('Media conversion failed');};
+mkdirSync('assets/forena-gpu',{recursive:true});mkdirSync('assets/forena',{recursive:true});
+run(['-i','reference/centum-forena-video/entrance-to-real-living-v1.mp4','-vf','crop=iw:ih*0.76:0:ih*0.12,scale=1280:720,setsar=1,fps=24','-an','-c:v','libx264','-crf','21','-preset','medium','-g','12','-keyint_min','12','-sc_threshold','0','-movflags','+faststart','assets/forena/entrance.mp4']);
+run(['-i','assets/forena/entrance.mp4','-frames:v','1','-quality','86','assets/forena/poster.webp']);
+for(const [name,vf] of [['wide','scale=512:288,tile=4x3:nb_frames=12'],['mobile','crop=ih*9/16:ih,scale=288:512,tile=3x4:nb_frames=12']])run(['-i','assets/forena/entrance.mp4','-vf',vf,'-vsync','0','-start_number','0','-c:v','libwebp','-f','image2','-quality','80',`assets/forena-gpu/${name}-%02d.webp`]);
+for(const [name,input,vf] of [['living','02-kitchen-to-living.jpg','crop=1440:1080:0:180,scale=1440:1080'],['entrance','05-entrance-corridor.jpg','crop=1080:1440:180:0'],['bedroom','03-bedroom.jpg','crop=1440:1080:0:180'],['washbasin','04-washbasin.jpg','crop=1080:1440:180:0'],['garden','06-indoor-garden.jpg','scale=1200:1200']])run(['-i',`reference/instagram/centum-forena/${input}`,'-vf',vf,'-frames:v','1','-quality','85',`assets/forena/${name}.webp`]);
+console.log('Forena video, 32 GPU sheets and 5 actual photographs prepared.');

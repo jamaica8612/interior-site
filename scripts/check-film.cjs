@@ -105,6 +105,6 @@ function scroll(p){window.scrollY=p*880;window.emit('scroll')}
  assert.equal(uploads,32);assert.equal(maxTextures,16,'Orientation must release old textures before new allocation');
  canvas.emit('webglcontextlost');await microtasks();assert.equal(textures.size,0);assert.equal(document.documentElement.classList.contains('film-show-frames'),false);
  window.allHomeTour.play(1);await microtasks();assert.equal(film.paused,false,'Context loss must preserve native fallback');window.allHomeTour.stop();
- const mobileBytes=fs.readdirSync(path.join(root,'assets/entrance-gpu')).filter(n=>n.startsWith('mobile-')).reduce((n,file)=>n+fs.statSync(path.join(root,'assets/entrance-gpu',file)).size,0);
+ const mobileBytes=fs.readdirSync(path.join(root,'assets/forena-gpu')).filter(n=>n.startsWith('mobile-')).reduce((n,file)=>n+fs.statSync(path.join(root,'assets/forena-gpu',file)).size,0);
  console.log('PASS: complete readiness; no decode/upload/network/layout reads during scrubbing; forward/reverse motion; native handoff; orientation; context-loss fallback. Mobile '+mobileBytes+' bytes / 16 textures / 108 MiB GPU; one live CPU image. Mock checks only, no physical phone FPS measurement.');
 })().catch(error=>{console.error(error);process.exitCode=1});

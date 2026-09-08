@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/living-room.webp" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/entrance-flow-poster.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/forena/living.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/forena/poster.webp" fetchpriority="high">
   <style>
     :root{--paper:#f4f3ee;--white:#fff;--ink:#252a25;--muted:#787b72;--line:#d6d7ce;--orange:#cf5835;--orange-dark:#ad4123;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans','Noto Sans KR',sans-serif}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}body.modal-open{overflow:hidden}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}button:disabled{cursor:default;opacity:.45}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:5px}img{display:block;width:100%;height:100%;object-fit:cover}button{color:inherit}::selection{background:var(--orange);color:white}h1,h2,h3,p{margin:0}h1,h2,h3{word-break:keep-all}svg.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;flex:none}button.clean{background:none;border:0;padding:0}.container{width:min(1320px,calc(100% - 112px));margin-inline:auto}.eyebrow{font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;display:flex;align-items:center;gap:12px}.eyebrow::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%}.section-heading{font-size:clamp(32px,3.4vw,50px);line-height:1.45;letter-spacing:-2px;font-weight:500}.italic{font-family:var(--serif);font-weight:400;font-style:italic}.arrow-link{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;font-size:14px;font-weight:500;padding-block:13px;border-bottom:1px solid currentColor}.arrow-link:hover .icon{transform:translate(3px,-3px)}.arrow-link .icon{transition:transform .2s}.skip-link{position:fixed;top:8px;left:8px;transform:translateY(-150%);background:var(--paper);z-index:100;padding:10px 20px}.skip-link:focus{transform:none}
@@ -66,6 +66,7 @@
     .film-ready .entrance-frames{contain:strict}
   </style>
   <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
+<link rel="stylesheet" href="assets/chat.css">
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol><symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol><symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol><symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol></svg>
@@ -82,9 +83,9 @@
   </header>
   <main id="main">
     <div class="walkthrough" id="walkthrough"><section class="hero" id="home-scene" aria-labelledby="hero-title">
-      <div class="scene"><img class="hero-photo" src="assets/living-room.webp" alt="햇살이 스며드는 우드와 스톤 소재의 거실 인테리어 콘셉트" width="1672" height="941" fetchpriority="high"><img class="entrance-photo" src="assets/entrance.webp" alt="따뜻한 거실로 이어지는 월넛 현관 입구" width="1672" height="941" fetchpriority="high"></div>
+      <div class="scene"><img class="hero-photo" src="assets/forena/living.webp" alt="올 인테리어 디자인의 센텀포레나 실제 시공 거실" width="1672" height="941" fetchpriority="high"><img class="entrance-photo" src="assets/forena/poster.webp" alt="센텀포레나 시공사진을 참고한 AI 현관 입장 연출" width="1672" height="941" fetchpriority="high"></div>
       <div class="three-stage" id="three-stage" aria-hidden="true"></div>
-      <video class="entrance-film" id="entrance-film" muted playsinline preload="metadata" poster="assets/entrance-flow-poster.webp" aria-hidden="true" disablepictureinpicture data-src="assets/entrance-flow.mp4"></video>
+      <video class="entrance-film" id="entrance-film" muted playsinline preload="metadata" poster="assets/forena/poster.webp" aria-hidden="true" disablepictureinpicture data-src="assets/forena/entrance.mp4"></video>
       <canvas class="entrance-frames" id="entrance-frames" aria-hidden="true"></canvas>
       <div class="hero-grid"></div>
       <div class="hero-index" aria-hidden="true">01 <span></span> ALL</div>
@@ -99,13 +100,13 @@
       <button class="round-cta" data-quote aria-label="내 공간 무료 견적 상담 시작">당신의 공간은<br>어떤 모습인가요?<svg class="icon"><use href="#arrow-up-right"/></svg></button>
       <div class="room-message" aria-hidden="true" id="room-message"><p class="eyebrow">01 / THE LIVING ROOM</p><h2>돌아오고 싶은 곳.<br>바로, 나의 집.</h2><p>발끝에 닿는 질감부터 오후의 빛까지.<br>일상의 모든 순간을 생각한 공간.</p></div>
       <div class="room-hotspots" id="room-hotspots" inert aria-label="거실의 공간 디테일">
-        <div class="room-hotspot" data-detail="wood"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-wood" aria-label="우드 마감 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">01 &nbsp; MATERIAL</span><div class="hotspot-panel" id="detail-wood" hidden><small>THE TOUCH OF WOOD</small><h3>온기를 더하는 나무</h3><p>벽에서 천장으로 이어지는 우드 톤. 재료의 결을 따라 공간이 한층 깊고 편안해집니다.</p></div></div>
-        <div class="room-hotspot" data-detail="sofa"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-sofa" aria-label="거실 공간 구성 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">02 &nbsp; LIVING</span><div class="hotspot-panel" id="detail-sofa" hidden><small>ROOM TO SLOW DOWN</small><h3>쉬어가는 자리</h3><p>시선이 열리는 배치와 부드러운 소재. 함께 앉아 이야기하기 좋은 거실을 상상해보세요.</p></div></div>
-        <div class="room-hotspot" data-detail="light"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-light" aria-label="창과 자연광 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">03 &nbsp; LIGHT</span><div class="hotspot-panel" id="detail-light" hidden><small>LET THE LIGHT IN</small><h3>빛이 머무는 창</h3><p>얇은 커튼을 통과하는 오후의 햇살. 시간에 따라 달라지는 빛도 공간의 일부가 됩니다.</p></div></div>
+        <div class="room-hotspot" data-detail="wood"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-wood" aria-label="몰딩 마감 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">01 &nbsp; MATERIAL</span><div class="hotspot-panel" id="detail-wood" hidden><small>CLASSIC DETAILS</small><h3>선을 살리는 몰딩</h3><p>흰 몰딩과 대리석 무늬 마감이 이어집니다. 센텀포레나 시공에서 만나는 섬세한 디테일입니다.</p></div></div>
+        <div class="room-hotspot" data-detail="sofa"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-sofa" aria-label="거실 공간 구성 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">02 &nbsp; LIVING</span><div class="hotspot-panel" id="detail-sofa" hidden><small>ROOM TO SLOW DOWN</small><h3>쉬어가는 자리</h3><p>시선이 열리는 배치와 부드러운 소재. 함께 앉아 이야기하기 좋은 거실을 만나보세요.</p></div></div>
+        <div class="room-hotspot" data-detail="light"><button class="hotspot-toggle" aria-expanded="false" aria-controls="detail-light" aria-label="창과 자연광 살펴보기"><span aria-hidden="true">+</span></button><span class="hotspot-caption">03 &nbsp; LIGHT</span><div class="hotspot-panel" id="detail-light" hidden><small>LET THE LIGHT IN</small><h3>공간을 감싸는 조명</h3><p>커튼 위 간접조명과 천장의 라인조명. 밝기와 깊이를 함께 생각한 실제 시공 디테일입니다.</p></div></div>
       </div>
       <div class="room-controls" id="room-controls" inert><button id="replay-home"><span aria-hidden="true">↶</span> 입구에서 다시 보기</button><p>포인트를 눌러 공간을 살펴보세요</p></div>
       <div class="journey-transport" aria-label="공간 둘러보기 재생 조절"><button class="transport-button" id="tour-play" aria-label="공간 둘러보기 재생"><svg viewBox="0 0 20 20" aria-hidden="true"><path class="play-symbol" d="M5 3v14l12-7Z"/><path class="pause-symbol" d="M4 3h4v14H4zm8 0h4v14h-4z"/></svg></button><div class="transport-track"><label for="tour-progress" id="tour-location">현관 앞</label><input id="tour-progress" type="range" min="0" max="100" step="1" value="0" aria-label="공간 둘러보기 진행 위치" aria-valuetext="현관 앞"></div><span class="transport-count" id="tour-percent" aria-hidden="true">0%</span><button class="transport-button journey-reset" id="tour-reset" aria-label="현관부터 다시 보기">↶</button></div><p class="tour-status" id="tour-status" role="status" aria-live="polite"></p>
-      <div class="hero-bottom"><a class="scroll-hint" href="#about" id="journey-scroll">SCROLL TO STEP INSIDE</a><p class="hero-caption"><strong>Designed for your everyday.</strong><br>ALL INTERIOR · 공간 콘셉트 이미지</p></div><div class="journey-line" aria-hidden="true"></div>
+      <div class="hero-bottom"><a class="scroll-hint" href="#about" id="journey-scroll">SCROLL TO STEP INSIDE</a><p class="hero-caption"><strong>Designed for your everyday.</strong><br>센텀포레나 · 시공사진 기반 AI 입장 연출</p></div><div class="journey-line" aria-hidden="true"></div>
     </section></div>
     <form class="container quick-inquiry" id="quick-form" aria-label="빠른 견적 상담 준비">
       <p class="quick-intro">어떤 공간을<br>바꾸고 싶으세요?</p>
@@ -123,12 +124,11 @@
       </div>
     </section>
     <section class="spaces container" id="spaces" aria-labelledby="spaces-title">
-      <div class="section-top reveal"><div><p class="eyebrow">SPACES & POSSIBILITIES</p><h2 class="section-heading" id="spaces-title">당신의 공간이 될 장면들.</h2></div><p class="section-aside">좋아하는 분위기부터 골라보세요.<br>그 안에서 우리만의 방향을 찾습니다.</p></div>
-      <div class="space-grid">
-        <article class="space-card reveal"><div class="image-wrap"><img src="assets/living-room.webp" alt="자연스러운 우드와 크림 컬러를 조합한 따뜻한 주거공간 콘셉트" loading="lazy" width="1536" height="1024"><span class="image-label">RESIDENTIAL</span><button class="image-open" data-preview="living" aria-label="주거공간 콘셉트 이미지 크게 보기"><svg class="icon"><use href="#arrow-up-right"/></svg></button><span class="image-concept">공간 콘셉트</span></div><div class="space-details"><div><h3>가장 나다운 쉼의 공간</h3><p>주거 인테리어 &nbsp; / &nbsp; Natural · Warm · Timeless</p></div><span class="space-number">01 / HOME</span></div></article>
-        <article class="space-card reveal"><div class="image-wrap"><img src="assets/commercial.webp" alt="스톤 카운터와 목재 디테일이 어우러진 감각적인 카페 인테리어 콘셉트" loading="lazy" width="1024" height="1536"><span class="image-label">COMMERCIAL</span><button class="image-open" data-preview="commercial" aria-label="상업공간 콘셉트 이미지 크게 보기"><svg class="icon"><use href="#arrow-up-right"/></svg></button><span class="image-concept">공간 콘셉트</span></div><div class="space-details"><div><h3>다시 찾고 싶은, 그곳</h3><p>상업 인테리어 &nbsp; / &nbsp; Identity · Detail · Experience</p></div><span class="space-number">02 / SHOP</span></div></article>
-      </div>
-      <p class="space-footnote">위 이미지는 스타일 제안을 위해 제작한 콘셉트 이미지이며, 실제 시공 사례가 아닙니다.</p>
+      <div class="section-top reveal"><div><p class="eyebrow">BUILT BY ALL</p><h2 class="section-heading" id="spaces-title">우리가 완성한 공간.</h2></div><p class="section-aside">센텀포레나 리모델링.<br>사진 속 디테일에서 변화를 만나보세요.</p></div>
+      <div class="space-grid"><article class="space-card reveal"><div class="image-wrap"><img src="assets/forena/living.webp" alt="센텀포레나 실제 시공 — 파란 소파와 아일랜드, 함께 머무는 공간" loading="lazy" width="1440" height="1080"><span class="image-label">CENTUM FORENA</span><button class="image-open" data-preview="living" aria-label="거실과 주방 시공사진 크게 보기"><svg class="icon"><use href="#arrow-up-right"/></svg></button><span class="image-concept">실제 시공</span></div><div class="space-details"><div><h3>거실과 주방</h3><p>센텀포레나 &nbsp; / &nbsp; 파란 소파와 아일랜드, 함께 머무는 공간</p></div><span class="space-number">01</span></div></article>
+<article class="space-card reveal"><div class="image-wrap"><img src="assets/forena/entrance.webp" alt="센텀포레나 실제 시공 — 몰딩과 샹들리에가 이어지는 현관" loading="lazy" width="1080" height="1440"><span class="image-label">CENTUM FORENA</span><button class="image-open" data-preview="entrance" aria-label="집의 첫인상 시공사진 크게 보기"><svg class="icon"><use href="#arrow-up-right"/></svg></button><span class="image-concept">실제 시공</span></div><div class="space-details"><div><h3>집의 첫인상</h3><p>센텀포레나 &nbsp; / &nbsp; 몰딩과 샹들리에가 이어지는 현관</p></div><span class="space-number">02</span></div></article>
+<article class="space-card reveal"><div class="image-wrap"><img src="assets/forena/bedroom.webp" alt="센텀포레나 실제 시공 — 단차와 간접조명을 살린 침실" loading="lazy" width="1440" height="1080"><span class="image-label">CENTUM FORENA</span><button class="image-open" data-preview="bedroom" aria-label="하루를 쉬어가는 곳 시공사진 크게 보기"><svg class="icon"><use href="#arrow-up-right"/></svg></button><span class="image-concept">실제 시공</span></div><div class="space-details"><div><h3>하루를 쉬어가는 곳</h3><p>센텀포레나 &nbsp; / &nbsp; 단차와 간접조명을 살린 침실</p></div><span class="space-number">03</span></div></article>
+<article class="space-card reveal"><div class="image-wrap"><img src="assets/forena/washbasin.webp" alt="센텀포레나 실제 시공 — 골드 수전과 조명 거울의 세면 공간" loading="lazy" width="1080" height="1440"><span class="image-label">CENTUM FORENA</span><button class="image-open" data-preview="washbasin" aria-label="작은 공간의 디테일 시공사진 크게 보기"><svg class="icon"><use href="#arrow-up-right"/></svg></button><span class="image-concept">실제 시공</span></div><div class="space-details"><div><h3>작은 공간의 디테일</h3><p>센텀포레나 &nbsp; / &nbsp; 골드 수전과 조명 거울의 세면 공간</p></div><span class="space-number">04</span></div></article></div><p class="space-footnote">올 인테리어 디자인의 센텀포레나 실제 시공사진입니다. &nbsp; <a class="portfolio-source" href="https://www.instagram.com/ol_interior_design/p/C3W27W0BI23/" target="_blank" rel="noopener noreferrer">인스타그램 원본 보기 ↗</a></p>
     </section>
     <section class="services" id="services" aria-labelledby="services-title"><div class="container services-layout">
       <div class="services-intro reveal"><p class="eyebrow">FROM ONE DETAIL TO ALL</p><h2 id="services-title">작은 디테일부터<br>공간의 모든 것까지.<span class="italic">We do it all.</span></h2><p>모두 바꾸지 않아도 괜찮습니다.<br>지금 필요한 변화부터, 꼼꼼하게 함께합니다.</p></div>
@@ -394,13 +394,10 @@
       };
       $$('[data-quote]').forEach(btn => btn.addEventListener('click', () => openQuote(false)));
       $('#quick-form').addEventListener('submit', e => { e.preventDefault(); openQuote(true); });
-      const previewInfo = {
-        living: { src: 'assets/living-room.webp', title: '가장 나다운 쉼의 공간', alt: '따뜻한 우드와 스톤, 부드러운 패브릭이 어우러진 주거공간 콘셉트' },
-        commercial: { src: 'assets/commercial.webp', title: '다시 찾고 싶은, 그곳', alt: '자연광과 스톤, 목재가 어우러진 카페 인테리어 콘셉트' }
-      };
+      const previewInfo = {"living":{"src":"assets/forena/living.webp","title":"센텀포레나 · 거실과 주방","alt":"파란 소파와 아일랜드, 함께 머무는 공간"},"entrance":{"src":"assets/forena/entrance.webp","title":"센텀포레나 · 집의 첫인상","alt":"몰딩과 샹들리에가 이어지는 현관"},"bedroom":{"src":"assets/forena/bedroom.webp","title":"센텀포레나 · 하루를 쉬어가는 곳","alt":"단차와 간접조명을 살린 침실"},"washbasin":{"src":"assets/forena/washbasin.webp","title":"센텀포레나 · 작은 공간의 디테일","alt":"골드 수전과 조명 거울의 세면 공간"}};
       $$('[data-preview]').forEach(btn => btn.addEventListener('click', () => {
         const info = previewInfo[btn.dataset.preview]; $('#preview-image').src = info.src; $('#preview-image').alt = info.alt; $('#preview-caption').textContent = info.title;
-        const note = document.createElement('small'); note.textContent = '스타일 제안을 위한 콘셉트 이미지 · 실제 시공 사례가 아닙니다.'; $('#preview-caption').append(note); showDialog($('#preview-dialog'));
+        const note = document.createElement('small'); note.textContent = '올 인테리어 디자인 · 센텀포레나 실제 시공사진'; $('#preview-caption').append(note); showDialog($('#preview-dialog'));
       }));
       let photos = [];
       const renderPhotos = () => {
@@ -448,7 +445,7 @@
         const action = document.getElementById('enter-home');
         action.firstChild.textContent = '공간 살펴보기 ';
         document.querySelector('.entrance-small').textContent = '아래로 스크롤하며 공간을 둘러보세요';
-        document.querySelector('.hero-caption').innerHTML = '<strong>Designed for your everyday.</strong><br>ALL INTERIOR · 공간 콘셉트 이미지';
+        document.querySelector('.hero-caption').innerHTML = '<strong>Designed for your everyday.</strong><br>센텀포레나 · 시공사진 기반 AI 입장 연출';
         host.replaceChildren(); try { renderer?.dispose(); } catch {}
       };
       try {
@@ -645,5 +642,5 @@
     window.addEventListener('all-film-unavailable', start3DTour, {once:true});
     if (!window.allHomeTour?.usesFilm()) start3DTour();
   </script>
-</body>
+<button class="ai-launch" id="ai-launch" aria-haspopup="dialog">✦ AI 공간 상담</button><dialog id="ai-dialog" aria-labelledby="ai-title"><div class="ai-head"><div><small>ALL INTERIOR · SAMPLE</small><h2 id="ai-title">AI 공간 상담</h2></div><button id="ai-close" aria-label="AI 상담 닫기">×</button></div><div class="ai-log" id="ai-log" role="log" aria-live="polite"><p class="ai-message model">어떤 공간을 바꾸고 싶으세요? 공사 범위와 예산을 함께 정리해드릴게요.</p></div><div class="ai-suggestions"><button data-ai-question>30평 전체 리모델링 상담</button><button data-ai-question>욕실만 바꾸고 싶어요</button></div><p class="ai-notice">Gemini AI 상담 체험 · 확정 견적과 예약은 업체 상담이 필요합니다.<br>입력 내용은 Google AI로 전송되며 서비스 개선에 사용될 수 있습니다. 이름·연락처·상세주소는 입력하지 마세요.</p><p id="ai-status" role="status"></p><form id="ai-form"><label for="ai-input" class="sr-only">인테리어 질문</label><input id="ai-input" maxlength="1200" required placeholder="궁금한 점을 적어주세요" autocomplete="off"><button id="ai-send" type="submit">전송</button></form><a class="ai-contact" href="https://www.instagram.com/ol_interior_design/" target="_blank" rel="noopener noreferrer">업체 인스타그램에서 상담하기 ↗</a></dialog><script src="assets/chat.js" defer></script></body>
 </html>

@@ -71,7 +71,7 @@ window.createFilmSequence = function ({ canvas, onFrame, onFailure, onReady, onL
     // Bounded transfer; all CPU images are decoded and discarded one at a time below.
     const worker=async()=>{while(next<sheetCount&&current()){
       const index=next++;
-      const response=await fetch(`assets/entrance-gpu/${variant}-${String(index).padStart(2,'0')}.webp`,{signal,cache:'force-cache'});
+      const response=await fetch(`assets/forena-gpu/${variant}-${String(index).padStart(2,'0')}.webp`,{signal,cache:'force-cache'});
       if(!response.ok)throw Error('Film sheet unavailable');
       const blob=await response.blob();if(!current())return;blobs[index]=blob;
       onLoading?.(Math.round(++downloaded/sheetCount*45));

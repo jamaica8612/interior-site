@@ -15,10 +15,18 @@ for (const match of html.matchAll(/(?:src|href|poster)="(assets\/[^"#]+)"/g)) {
 }
 new Script(await readFile(resolve(root, 'assets/film-sequence-gpu.js'), 'utf8'));
 for (const variant of ['mobile','wide']) for (let sheet = 0; sheet < 16; sheet++) {
-  await access(resolve(root, `assets/entrance-gpu/${variant}-${String(sheet).padStart(2,'0')}.webp`));
+    await access(resolve(root, `assets/forena-gpu/${variant}-${String(sheet).padStart(2,'0')}.webp`));
 }
 const output = resolve(root, 'dist');
 await mkdir(output, { recursive: true });
 await copyFile(resolve(root, 'index.html'), resolve(output, 'index.html'));
 await cp(resolve(root, 'assets'), resolve(output, 'assets'), { recursive: true });
-console.log('Static site validated and built into dist/.');
+new Script(await readFile(resolve(root, 'assets/chat.js'), 'utf8'));
+await mkdir(resolve(output,'client'),{recursive:true});
+await mkdir(resolve(output,'server'),{recursive:true});
+await mkdir(resolve(output,'.openai'),{recursive:true});
+await copyFile(resolve(root,'index.html'),resolve(output,'client/index.html'));
+await cp(resolve(root,'assets'),resolve(output,'client/assets'),{recursive:true});
+await copyFile(resolve(root,'server/worker.mjs'),resolve(output,'server/index.js'));
+await copyFile(resolve(root,'.openai/hosting.json'),resolve(output,'.openai/hosting.json'));
+console.log('Site and Gemini Worker validated and built into dist/.');
