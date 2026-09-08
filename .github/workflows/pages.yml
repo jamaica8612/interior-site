@@ -1,0 +1,46 @@
+# 예비 경로. 기본 배포는 Cloudflare Workers 다 (npm run deploy, docs/deploy.md 참고).
+# 이 워크플로는 자동으로 돌지 않는다 — Actions 탭에서 직접 실행할 때만 GitHub Pages 에 올린다.
+# Pages 에는 서버가 없어 AI 상담(/api/chat)이 동작하지 않는다.
+name: Deploy to GitHub Pages (수동)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 검증 및 빌드
+        run: |
+          node scripts/build.mjs
+          node scripts/check-chat.mjs
+          node scripts/check-film.cjs
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
