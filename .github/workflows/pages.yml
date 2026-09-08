@@ -1,10 +1,9 @@
-# main 에 push 되면 정적 사이트를 GitHub Pages 에 배포한다.
-# AI 상담(/api/chat)은 서버가 필요하므로 Pages 에서는 동작하지 않는다 — docs/deploy.md 참고.
-name: Deploy to GitHub Pages
+# 예비 경로. 기본 배포는 Cloudflare Workers 다 (npm run deploy, docs/deploy.md 참고).
+# 이 워크플로는 자동으로 돌지 않는다 — Actions 탭에서 직접 실행할 때만 GitHub Pages 에 올린다.
+# Pages 에는 서버가 없어 AI 상담(/api/chat)이 동작하지 않는다.
+name: Deploy to GitHub Pages (수동)
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

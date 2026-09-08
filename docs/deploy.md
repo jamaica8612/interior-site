@@ -16,7 +16,19 @@
 `server/worker.mjs`는 Cloudflare Worker 형식입니다 (`export default { fetch }`, 정적 파일은
 `env.ASSETS`, 요청 IP는 `cf-connecting-ip`). 설정은 `wrangler.toml`에 있습니다.
 
-### 최초 1회
+### 가장 빠른 방법 — 계정 없이 (미리보기용)
+
+```bash
+npm install
+npx wrangler deploy --temporary
+```
+
+Cloudflare 임시 계정으로 올리고 **접속 주소와 claim URL**을 출력합니다.
+claim URL을 열면 그 배포를 본인 Cloudflare 계정으로 가져올 수 있습니다.
+임시 배포에는 시크릿을 넣을 수 없어 AI 상담은 "AI 상담을 준비 중입니다"로 안내됩니다.
+나머지 화면은 전부 정상 동작하므로 업체에 보여주기용으로 충분합니다.
+
+### 최초 1회 — 본인 계정으로 (AI 상담 포함)
 
 ```bash
 npm install
@@ -26,7 +38,7 @@ npx wrangler secret put GEMINI_API_KEY   # 값을 붙여넣기 (소스에 넣지
 
 `GEMINI_MODEL`은 선택입니다. 등록하지 않으면 `gemini-3.5-flash-lite`를 씁니다.
 
-### 배포할 때마다
+### 그 뒤로 배포할 때마다
 
 ```bash
 git pull origin main
@@ -45,16 +57,16 @@ npx wrangler secret list              # 시크릿 등록 여부 (값은 안 보�
 
 ---
 
-## B. GitHub Pages — 화면만 (AI 상담 제외)
+## B. GitHub Pages — 예비 경로, 화면만 (AI 상담 제외)
 
-`main`에 push하면 `.github/workflows/pages.yml`이 자동으로 빌드해서 배포합니다.
-계정 설정이나 토큰이 필요 없습니다.
+기본 배포는 A입니다. B는 Cloudflare를 쓸 수 없을 때의 예비 경로라
+자동으로 돌지 않습니다 — **Actions 탭 → "Deploy to GitHub Pages (수동)" → Run workflow**
+로 직접 실행할 때만 배포됩니다. 계정 설정이나 토큰은 필요 없습니다.
 
 주소: `https://jamaica8612.github.io/interior-site/`
 
-워크플로가 Pages를 자동으로 켜도록(`enablement: true`) 되어 있어 별도 설정 없이 첫 push에서 배포됩니다.
+워크플로가 Pages를 자동으로 켜도록(`enablement: true`) 되어 있어 별도 설정 없이 첫 실행에서 배포됩니다.
 혹시 권한 때문에 실패하면 **Settings → Pages → Source를 "GitHub Actions"로** 한 번만 지정해주세요.
-진행 상황은 Actions 탭에서 볼 수 있습니다.
 
 Pages에는 서버가 없어서 `/api/chat`이 없습니다. AI 상담창은 열리지만 질문을 보내면
 "AI 상담은 이 주소에서 준비 중입니다"라고 안내합니다. 나머지 기능(입장 필름, 시공사례
