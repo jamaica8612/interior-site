@@ -19,69 +19,99 @@
     img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .it { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; }
     .kr { font-family: 'Noto Sans KR', sans-serif; }
+    .film-still { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      transform-origin: 56% 46%; will-change: transform;
+      animation: hero-drift 34s cubic-bezier(.42, 0, .58, 1) infinite alternate; }
+    @keyframes hero-drift {
+      from { transform: scale(1.03) translate3d(0, 0, 0); }
+      to   { transform: scale(1.16) translate3d(0, -1.4%, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) { .film-still { animation: none; transform: scale(1.06); } }
   </style>
 </helmet>
 
 <div style="min-height: 5120px; display: flex; flex-direction: column; background: #f4f3ee">
 
-  <!-- HEADER -->
-  <div style="height: 94px; padding: 0 56px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border-bottom: 1px solid #d6d7ce">
-    <div style="display: flex; align-items: center; gap: 17px">
-      <span style="font-size: 51px; line-height: 1; letter-spacing: -5px; font-weight: 500">all.</span>
-      <span style="font-size: 11px; line-height: 1.6; letter-spacing: 1.4px; border-left: 1px solid #d6d7ce; padding-left: 18px; color: #787b72">ALL INTERIOR<br>올 인테리어 디자인</span>
+  <!-- HERO — 입장 필름 -->
+  <div style="position: relative; height: 830px; background: #252a25; overflow: hidden; color: #fff">
+    <div style="position: absolute; inset: 0; overflow: hidden">
+      <img class="film-still" src="film-2.webp" alt="현관문이 열리며 거실로 이어지는 입장 연출">
     </div>
-    <div style="display: flex; align-items: center; gap: 35px; font-size: 14px">
-      <a href="#">올의 이야기</a>
-      <a href="#">공간 둘러보기</a>
-      <a href="#">시공 서비스</a>
-      <a href="#">함께하는 과정</a>
-      <div style="display: flex; align-items: center; gap: 22px; font-size: 13px; padding: 11px 18px; border: 1px solid #252a25; color: #252a25">
-        무료 견적 상담
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M5 5h14v14"/></svg>
-      </div>
-    </div>
-  </div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #111c16c4 0%, #15201866 46%, #171d1512 78%), linear-gradient(0deg, #171e1bb0 0%, transparent 30%, #17201a55 100%)"></div>
+    <div style="position: absolute; inset: 94px 56px 0; border-left: 1px solid #ffffff14; border-right: 1px solid #ffffff14"></div>
 
-  <!-- HERO -->
-  <div style="display: grid; grid-template-columns: 604px 836px; height: 760px; border-bottom: 1px solid #d6d7ce">
-    <div style="padding: 96px 64px 44px 56px; display: flex; flex-direction: column; justify-content: space-between">
-      <div style="display: flex; flex-direction: column; gap: 26px">
-        <div style="display: flex; align-items: center; gap: 15px; font-size: 12px; letter-spacing: 3px; color: #787b72">
-          <span style="width: 38px; height: 1px; background: #cf5835"></span>
-          YOUR NEW LIFE, JUST INSIDE.
-        </div>
-        <h1 class="kr" style="font-size: 54px; font-weight: 300; line-height: 1.32; letter-spacing: -2.8px">어서 오세요.<br>당신의 새로운<br>공간으로.</h1>
-        <p class="it" style="font-size: 27px; line-height: 1.4; color: #cf5835">Welcome to your new everyday.</p>
-        <p style="font-size: 16px; font-weight: 300; line-height: 1.9; color: #5f645d">문을 여는 순간, 시작되는 다른 일상.<br>부산의 주거·상업공간을 올 인테리어 디자인이 함께 그립니다.</p>
-        <div style="display: flex; align-items: center; gap: 20px; margin-top: 6px">
-          <div style="display: flex; align-items: center; gap: 28px; background: #cf5835; color: #fff; padding: 19px 26px; font-size: 15px; font-weight: 500">
-            무료 방문 견적 신청
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
-          </div>
-          <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; padding-bottom: 3px; border-bottom: 1px solid #252a25">
-            시공 사례 보기
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M5 5h14v14"/></svg>
-          </div>
-        </div>
+    <!-- HEADER (필름 위) -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 94px; padding: 0 56px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border-bottom: 1px solid #ffffff30">
+      <div style="display: flex; align-items: center; gap: 17px">
+        <span style="font-size: 51px; line-height: 1; letter-spacing: -5px; font-weight: 500">all.</span>
+        <span style="font-size: 11px; line-height: 1.6; letter-spacing: 1.4px; border-left: 1px solid #ffffff50; padding-left: 18px">ALL INTERIOR<br>올 인테리어 디자인</span>
       </div>
-      <div style="display: flex; gap: 30px; font-size: 12px; letter-spacing: 1.4px; color: #787b72; border-top: 1px solid #d6d7ce; padding-top: 22px">
-        <span style="display: flex; align-items: center; gap: 8px">
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#cf5835" stroke-width="1.5"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          부산 전 지역
-        </span>
-        <span>주거 · 상업공간</span>
-        <span>방문 실측 · 견적 무료</span>
+      <div style="display: flex; align-items: center; gap: 35px; font-size: 14px">
+        <a href="#" style="color: #fff">올의 이야기</a>
+        <a href="#" style="color: #fff">공간 둘러보기</a>
+        <a href="#" style="color: #fff">시공 서비스</a>
+        <a href="#" style="color: #fff">함께하는 과정</a>
+        <div style="display: flex; align-items: center; gap: 22px; font-size: 13px; padding: 11px 18px; border: 1px solid #ffffff75; background: #ffffff10">
+          무료 견적 상담
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M5 5h14v14"/></svg>
+        </div>
       </div>
     </div>
-    <div style="position: relative; background: #252a25">
-      <img src="entrance.webp" alt="센텀포레나 현관 — 몰딩과 샹들리에가 이어지는 첫인상">
-      <div style="position: absolute; left: 0; bottom: 0; background: #f4f3ee; padding: 20px 26px; display: flex; align-items: baseline; gap: 16px">
-        <span style="font-size: 11px; letter-spacing: 2.2px; color: #787b72">CENTUM FORENA</span>
-        <span style="font-size: 13px">집의 첫인상 · 실제 시공</span>
+
+    <div style="position: absolute; right: 56px; top: 138px; display: flex; align-items: center; gap: 15px; font-size: 12px; letter-spacing: 2px">
+      01 <span style="width: 72px; height: 1px; background: #ffffff45; display: block"></span> ALL
+    </div>
+
+    <!-- 히어로 카피 -->
+    <div style="position: absolute; left: 56px; top: 216px; width: 660px; display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; align-items: center; gap: 15px; font-size: 12px; letter-spacing: 3px">
+        <span style="width: 38px; height: 1px; background: #cf5835"></span>
+        YOUR NEW LIFE, JUST INSIDE.
       </div>
-      <div style="position: absolute; right: 28px; top: 32px; display: flex; align-items: center; gap: 14px; font-size: 12px; letter-spacing: 2px; color: #fff">
-        01 <span style="width: 72px; height: 1px; background: #ffffff55; display: block"></span> 04
+      <h1 class="kr" style="font-size: 62px; font-weight: 300; line-height: 1.3; letter-spacing: -3.4px">어서 오세요.<br>당신의 새로운 공간으로.</h1>
+      <p class="it" style="font-size: 27px; color: #f0b9a5; line-height: 1.4">Welcome to your new everyday.</p>
+      <p style="font-size: 16px; font-weight: 300; line-height: 1.9; color: #ffffffd6">문을 여는 순간, 시작되는 다른 일상.<br>부산의 주거·상업공간을 올 인테리어 디자인이 함께 그립니다.</p>
+      <div style="display: flex; align-items: center; gap: 20px; margin-top: 4px">
+        <div style="display: flex; align-items: center; gap: 28px; background: #cf5835; color: #fff; padding: 19px 26px; font-size: 15px; font-weight: 500">
+          무료 방문 견적 신청
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; padding-bottom: 3px; border-bottom: 1px solid #ffffff85">
+          문을 열고 들어가기
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+        </div>
       </div>
+    </div>
+
+    <!-- 필름 재생 컨트롤 -->
+    <div style="position: absolute; left: 56px; bottom: 158px; width: 660px; display: flex; align-items: center; gap: 18px; border: 1px solid #ffffff3d; background: #1c2a2233; padding: 14px 18px">
+      <div style="width: 42px; height: 42px; flex: none; border: 1px solid #ffffff60; display: flex; align-items: center; justify-content: center">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="#fff"><path d="M5 3v14l12-7Z"/></svg>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 9px">
+        <div style="display: flex; justify-content: space-between; font-size: 11.5px; letter-spacing: 1.6px; color: #ffffffcc">
+          <span>현관 앞 → 거실</span><span>32%</span>
+        </div>
+        <div style="height: 2px; background: #ffffff30; position: relative">
+          <div style="position: absolute; left: 0; top: 0; height: 2px; width: 32%; background: #cf5835"></div>
+          <div style="position: absolute; left: 32%; top: -4px; width: 10px; height: 10px; background: #fff; margin-left: -5px"></div>
+        </div>
+      </div>
+      <div style="width: 42px; height: 42px; flex: none; border: 1px solid #ffffff60; display: flex; align-items: center; justify-content: center; font-size: 16px">↶</div>
+    </div>
+
+    <div style="position: absolute; left: 56px; right: 56px; bottom: 62px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
+      <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; letter-spacing: 2.4px">
+        SCROLL TO STEP INSIDE
+        <span style="width: 46px; height: 1px; background: #ffffff70"></span>
+      </div>
+      <p style="font-size: 12.5px; line-height: 1.75; text-align: right; color: #ffffffc4"><strong style="font-weight: 500; color: #fff">Designed for your everyday.</strong><br>센텀포레나 · 시공사진 기반 AI 입장 연출</p>
+    </div>
+
+    <!-- AI 상담 플로팅 버튼 -->
+    <div style="position: absolute; right: 56px; bottom: 158px; display: flex; align-items: center; gap: 12px; background: #f4f3ee; color: #252a25; padding: 16px 22px; font-size: 14px; font-weight: 500; box-shadow: 0 14px 34px #0d130f4d">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#cf5835" stroke-width="1.4"><path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9 12 3.5Z"/><path d="M18.5 15.6l.6 2 2 .6-2 .6-.6 2-.6-2-2-.6 2-.6.6-2Z"/></svg>
+      AI 공간 상담
     </div>
   </div>
 

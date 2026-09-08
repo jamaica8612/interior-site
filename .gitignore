@@ -5,3 +5,7 @@ dist/
 
 # Claude Design 캔버스 빌드 산출물 (2.9MB, seed-canvas.mjs로 재생성)
 .design/all-interior-redesign.html
+
+# design canvas: seeded output is regenerated from .design/*.dc.html
+.design/all-interior-redesign.html
+.design/live/
